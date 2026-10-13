@@ -1,0 +1,36 @@
+/* VERSION A — the Apple Ultra structure of Version B, in DARTMAN's own identity:
+   orange #E46A58 accent and buttons, Hanken Grotesk, real photos in colour, x/o patterns, our films. */
+.ua{--u-green:#E46A58;--u-blue:#E46A58;--u-link:#ff8f7b;--u-link2:#c4472f;--blue:#E46A58;--blue-h:#f07d6c;
+  --u-font:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.015em}
+.ua :is(.u-h80,.u-h64,.u-h56,.u-h48,.u-hero-h){letter-spacing:-.03em;font-weight:700}
+/* buttons: orange with dark text (contrast) */
+.ua .u-btn,.ua .u-ln-r .u-buy,.ua .mp-buy{background:#E46A58;color:#111}
+.ua .u-btn:hover,.ua .u-ln-r .u-buy:hover{background:#f07d6c}
+.ua .u-btn.ghost{background:transparent;color:#E46A58;box-shadow:inset 0 0 0 1.5px #E46A58}
+.ua .u-btn.ghost:hover{background:#E46A58;color:#111}
+.ua .bb.blue,.ua .afoot-cta.blue,.ua .alinks a.btn-pill.blue{color:#111!important}
+.ua .u-grad{background-image:linear-gradient(90deg,#E46A58 0%,#ffb199 50%,#E46A58 100%)}
+.ua .mp-chips input:checked+span,.ua .mp-thumbs button.on{box-shadow:inset 0 0 0 2px #E46A58}
+.ua .u-form :is(input,select,textarea):focus{outline-color:#E46A58}
+/* real photos stay in colour in Version A */
+.ua.u4 :is(.u-slide img,.u-chap-hero img,.u-intro2 img,.u-card-im.p img,.u-card-im.v video,.u-chap2 .u-full img,.u-up2-fig img,.u-dev-scr img.gr,.u-step-im img.gr){filter:none!important}
+/* x / o pattern behind the hero, the earn box and the quote */
+.ua .u-hero,.ua .u-box,.ua .u-q{position:relative;overflow:hidden;isolation:isolate}
+.ua .u-hero::before,.ua .u-box::before{content:"";position:absolute;inset:0;z-index:-1;background:url(/anas-dartman/assets/brand/pattern-cycle.svg) center/560px repeat;opacity:.07;filter:invert(1);pointer-events:none}
+.ua .u-q::before{content:"";position:absolute;inset:0;z-index:-1;background:url(/anas-dartman/assets/brand/pattern-cycle.svg) center/560px repeat;opacity:.05;pointer-events:none}
+/* our film, one tap away */
+.ua-film-btn{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 18px 9px 10px;border-radius:999px;font-size:14px;font-weight:600;color:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);transition:box-shadow .3s,background .3s}
+.ua-film-btn:hover{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px #E46A58}
+.ua-film-btn i{position:relative;width:26px;height:26px;border-radius:50%;background:#E46A58}
+.ua-film-btn i::after{content:"";position:absolute;left:10px;top:8px;border-left:8px solid #111;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.ua-inst{background:#000}
+.ua-film{margin-top:64px}
+.ua-film video{display:block;width:100%;border-radius:var(--u-r);background:#000;aspect-ratio:16/9}
+.ua-film figcaption{margin-top:16px;text-align:center;font-size:14px;color:var(--u-g)}
+/* local nav accent line */
+.ua .u-ln-r a.on::after{background:#E46A58}
+.ua .u-dev{box-shadow:inset 0 0 0 1.5px #3a3a3c,0 0 0 1px #000,0 80px 140px -50px rgba(228,106,88,.22)}
+.ua .u-phone{box-shadow:inset 0 0 0 1.5px #48484a,0 40px 100px -40px rgba(228,106,88,.3)}
+.ua .u-go-im img{box-shadow:0 0 0 10px #1d1d1f,0 0 0 11px #424245,0 50px 120px -30px rgba(228,106,88,.2)}
+.ua .u-checks li::before,.ua .u-q-copy li::before{background-color:#E46A58}
+.ua .mp-trust li::before{color:#E46A58}

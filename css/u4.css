@@ -529,7 +529,7 @@
 
 /* hero: one machine, big (rendered from the real machine, real DARTMAN badge) */
 .u-hero-one{position:relative;height:max(540px,calc(100vh - 330px));max-height:1000px;margin:24px auto 0;display:flex;justify-content:center;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
-.u-hero-one::before{content:"";position:absolute;left:50%;top:42%;width:min(900px,90vw);height:70%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,255,255,.08),transparent);pointer-events:none}
+.u-hero-one::before{display:none}
 .u-hero-one img{position:relative;height:100%;width:auto;animation:u-rise 1.6s cubic-bezier(.2,.7,.2,1) both}
 .u-hero-buy{margin-top:20px}
 @media (max-width:734px){.u-hero-one{height:62vh;min-height:420px}}

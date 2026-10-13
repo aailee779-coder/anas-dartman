@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addEventListener('scroll', () => requestAnimationFrame(gUpd), { passive: true }); gUpd(); }
 
   /* phone: give every sticky-screen step its own screen image */
-  $$('[data-usoft]').forEach(w => { const ims = $$('.u-dev-scr img', w); $$('.u-step', w).forEach((st, k) => { const im = ims[k]; if (!im) return; const f = d.createElement('div'); f.className = 'u-step-im'; const c = im.cloneNode(); c.classList.remove('on'); c.loading = 'lazy'; f.appendChild(c); st.prepend(f); }); });
+  $$('[data-usoft]').forEach(w => { const ims = $$('.u-dev-scr > img, .u-dev-scr > video', w); $$('.u-step', w).forEach((st, k) => { const im = ims[k]; if (!im) return; const f = d.createElement('div'); f.className = 'u-step-im'; const c = im.cloneNode(true); c.classList.remove('on'); if (c.tagName === 'VIDEO') { c.setAttribute('data-uvid', ''); setTimeout(() => vio.observe(c)); } else c.loading = 'lazy'; f.appendChild(c); st.prepend(f); }); });
 
   /* soft rise on scroll */
   const rise = $$('.u-sec :is(.u-h48,.u-h40,.u-h56,.u-h64,.u-h80,.u-eb,.u-p21,.u-p17,.u-box,.u-trio,.u-split,.u-go-im,.u-icons li,.u-env-grid li,.u-val-grid li,.u-cmp-card,.u-full)');
@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* software: the step in the middle of the screen drives the screen */
   $$('[data-usoft]').forEach(w => {
-    const steps = $$('.u-step', w), imgs = $$('.u-dev-scr img', w);
-    const set = k => { steps.forEach((s, j) => s.classList.toggle('on', j === k)); imgs.forEach((im, j) => im.classList.toggle('on', j === k)); };
+    const steps = $$('.u-step', w), imgs = $$('.u-dev-scr > img, .u-dev-scr > video', w);
+    const set = k => { steps.forEach((s, j) => s.classList.toggle('on', j === k)); imgs.forEach((im, j) => { im.classList.toggle('on', j === k); if (im.tagName === 'VIDEO') { if (j === k) { im.preload = 'auto'; im.play().catch(() => {}); } else im.pause(); } }); };
     const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) set(+e.target.dataset.k); }), { rootMargin: '-45% 0px -45% 0px' });
     steps.forEach(s => io2.observe(s));
   });

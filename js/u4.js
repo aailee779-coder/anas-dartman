@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const lnUpd = () => { if (!ln) return; const y = ln.getBoundingClientRect().bottom - 2; ln.classList.toggle('lt', lights.some(s => { const r = s.getBoundingClientRect(); return r.top <= y && r.bottom > y; })); };
   addEventListener('scroll', lnUpd, { passive: true }); lnUpd();
 
+  /* global nav hides on scroll down and comes back on scroll up (so other pages are always one tap away) */
+  const gh = $('.bhd');
+  if (gh) { let ly = scrollY; const gUpd = () => { const y = scrollY, open = gh.classList.contains('mopen');
+      const hide = !open && y > 160 && y > ly + 2, show = open || y < 160 || y < ly - 2;
+      if (hide) { gh.classList.add('gn-hide'); d.body.classList.remove('gn-on'); }
+      else if (show) { gh.classList.remove('gn-hide'); d.body.classList.toggle('gn-on', y > 48); }
+      ly = y; };
+    addEventListener('scroll', () => requestAnimationFrame(gUpd), { passive: true }); gUpd(); }
+
+  /* phone: give every sticky-screen step its own screen image */
+  $$('[data-usoft]').forEach(w => { const ims = $$('.u-dev-scr img', w); $$('.u-step', w).forEach((st, k) => { const im = ims[k]; if (!im) return; const f = d.createElement('div'); f.className = 'u-step-im'; const c = im.cloneNode(); c.classList.remove('on'); c.loading = 'lazy'; f.appendChild(c); st.prepend(f); }); });
+
   /* soft rise on scroll */
   const rise = $$('.u-sec :is(.u-h48,.u-h40,.u-h56,.u-h64,.u-h80,.u-eb,.u-p21,.u-p17,.u-box,.u-trio,.u-split,.u-go-im,.u-icons li,.u-env-grid li,.u-val-grid li,.u-cmp-card,.u-full)');
   rise.forEach(el => el.setAttribute('data-u', ''));

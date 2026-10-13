@@ -1,0 +1,101 @@
+/* /games/ — game park. Signature: crosshair cursor over the wall + "aim & throw" random picker. */
+
+/* hero: drifting mosaic of real title art behind big type */
+.gm-hero{position:relative;overflow:hidden;min-height:max(680px,100svh);display:flex;align-items:flex-end;padding:calc(var(--nav-h) + 80px) 0 96px}
+.gm-mosaic{position:absolute;inset:-6% -10%;display:flex;flex-direction:column;justify-content:center;gap:22px;transform:rotate(-8deg);opacity:.55}
+.gm-mosaic-row{display:flex;gap:22px;width:max-content}
+.gm-mosaic-row:nth-child(2){margin-left:-180px}
+.gm-mosaic img{width:clamp(220px,24vw,360px);aspect-ratio:375/275;object-fit:cover;border-radius:22px}
+.gm-hero-shade{position:absolute;inset:0;background:radial-gradient(120% 80% at 20% 100%,#000 30%,rgba(0,0,0,.72) 62%,rgba(0,0,0,.35)),linear-gradient(0deg,#000 0,transparent 40%)}
+.gm-hero-copy{position:relative;z-index:2}
+.gm-hero-copy .intro{max-width:600px;margin-top:22px}
+.gm-stats{display:flex;flex-wrap:wrap;gap:20px 56px;margin:40px 0 0}
+.gm-stats dd{margin:0}
+.gm-stats .stat span{font-size:var(--fs-small)}
+.gm-stats .tbc{font-size:11px;margin-left:4px}
+
+/* wall header */
+.gm-wall-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap}
+.gm-wall-intro{margin-top:14px;max-width:520px}
+.gm-throw{height:52px;padding:0 26px;font-size:17px}
+.gm-throw svg{transition:transform var(--dur-4) var(--ease-expo)}
+.gm-throw:hover svg{transform:rotate(90deg)}
+.gm-throw[aria-busy=true]{pointer-events:none;opacity:.7}
+
+/* sticky filter pills */
+.gm-filter-bar{position:sticky;top:var(--nav-h);z-index:20;padding:14px 0;margin-top:36px;background:rgba(0,0,0,.78);-webkit-backdrop-filter:saturate(1.8) blur(20px);backdrop-filter:saturate(1.8) blur(20px);border-bottom:1px solid var(--hair)}
+.gm-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter)}
+.gm-filters::-webkit-scrollbar{display:none}
+.gm-filters button{flex:none;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:var(--r-pill);font-size:15px;font-weight:600;color:var(--ink-2);box-shadow:inset 0 0 0 1px var(--hair);transition:color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.gm-filters button::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c,var(--ink))}
+.gm-filters button[data-filter=all]::before{display:none}
+.gm-filters button:hover{color:var(--ink)}
+.gm-filters button:active{transform:scale(.97)}
+.gm-filters button[aria-pressed=true]{background:var(--ink);color:#000;box-shadow:none}
+
+/* the wall */
+.gm-wall{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
+.gm-card{position:relative;display:flex;flex-direction:column;border-radius:var(--r-lg);background:var(--k95);box-shadow:inset 0 0 0 1px var(--hair);overflow:hidden;transition:transform var(--dur-3) var(--ease-expo),box-shadow var(--dur-3) var(--ease)}
+.gm-card[hidden]{display:none}
+.gm-card figure{aspect-ratio:375/275;overflow:hidden;background:var(--k90)}
+.gm-card figure img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-4) var(--ease-expo)}
+.gm-card-tx{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.gm-tag{font-size:12px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;color:var(--c)}
+.gm-name{font-size:21px;line-height:1.2;font-weight:650;letter-spacing:-.012em}
+.gm-card p{font-size:var(--fs-small);line-height:1.45;color:var(--ink-2)}
+.gm-players{margin-top:auto;padding-top:8px;font-size:12px;font-weight:600;color:var(--ink)}
+.gm-card-wide{grid-column:span 2}
+.gm-card-wide figure{aspect-ratio:750/275}
+.gm-variants{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#000}
+.gm-variants img{aspect-ratio:375/275;height:auto!important}
+.gm-card-wide .gm-variants{aspect-ratio:auto}
+@media (hover:hover){.gm-card:hover{box-shadow:inset 0 0 0 1.5px var(--c)}.gm-card:hover figure img{transform:scale(1.04)}}
+.gm-card.is-hit{box-shadow:inset 0 0 0 2px var(--c),0 0 0 6px color-mix(in srgb,var(--c) 22%,transparent),0 30px 80px -30px var(--c);transform:translateY(-4px)}
+.gm-card.is-hit::after{content:"Your game";position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:var(--r-pill);background:var(--c);color:#000;font-size:12px;font-weight:700;letter-spacing:.02em}
+.gm-foot{margin-top:28px;max-width:640px}
+.gm-wall-sec{padding-bottom:var(--pad-y);position:relative}
+@media (max-width:1068px){.gm-wall{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1069px){.gm-card-01 .gm-card-tx{padding-bottom:18px}}
+@media (max-width:734px){.gm-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gm-card-wide{grid-column:1/-1}.gm-card-tx{padding:12px 14px 16px}.gm-name{font-size:17px}.gm-card p{font-size:13px}.gm-card:not(.gm-card-wide) p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.gm-throw{width:100%}}
+
+/* crosshair cursor (fine pointers only, set by JS) */
+.gm-wall.has-cross,.gm-wall.has-cross *{cursor:none}
+.gm-cross{position:fixed;left:0;top:0;z-index:60;width:56px;height:56px;margin:-28px 0 0 -28px;pointer-events:none;opacity:0;transition:opacity var(--dur-2) var(--ease),width var(--dur-2) var(--ease-expo),height var(--dur-2) var(--ease-expo),margin var(--dur-2) var(--ease-expo);color:#fff;mix-blend-mode:difference}
+.gm-cross.on{opacity:1}
+.gm-cross.lock{width:72px;height:72px;margin:-36px 0 0 -36px}
+.gm-cross svg{width:100%;height:100%;overflow:visible}
+.gm-cross.fire circle.c2{animation:gm-pulse .5s var(--ease-expo)}
+@keyframes gm-pulse{from{r:4;opacity:1}to{r:30;opacity:0}}
+
+/* the reticle used by aim & throw (works on touch too) */
+.gm-reticle{position:absolute;left:0;top:0;z-index:30;width:84px;height:84px;margin:-42px 0 0 -42px;pointer-events:none;opacity:0;border-radius:50%;box-shadow:inset 0 0 0 2px var(--orange),0 0 40px rgba(228,106,88,.55)}
+.gm-reticle::before,.gm-reticle::after{content:"";position:absolute;background:var(--orange)}
+.gm-reticle::before{left:50%;top:-14px;bottom:-14px;width:2px;margin-left:-1px}
+.gm-reticle::after{top:50%;left:-14px;right:-14px;height:2px;margin-top:-1px}
+.gm-reticle i{position:absolute;inset:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--orange)}
+.gm-reticle.land i{animation:gm-land .6s var(--ease-expo)}
+@keyframes gm-land{0%{box-shadow:0 0 0 0 rgba(228,106,88,.9)}100%{box-shadow:0 0 0 60px rgba(228,106,88,0)}}
+
+/* ways */
+.gm-center{text-align:center;margin-bottom:56px}
+.gm-ways .card{display:flex;flex-direction:column;gap:10px;padding:16px 16px 28px}
+.gm-ways .media{border-radius:18px;margin-bottom:14px}
+.gm-way-n{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--violet);padding-left:8px;filter:brightness(1.5)}
+.gm-way .card-t,.gm-way p{padding-inline:8px}
+
+/* players */
+.gm-players-sec{position:relative;overflow:hidden}
+.gm-pl{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.gm-pl-big{font-size:clamp(220px,34vw,480px);line-height:.8;font-weight:800;letter-spacing:-.06em;text-align:center;color:transparent;-webkit-text-stroke:2px var(--yellow);font-variant-numeric:tabular-nums}
+.gm-pl .intro{margin-top:18px;max-width:560px}
+@media (max-width:734px){.gm-pl{grid-template-columns:1fr;gap:8px}.gm-pl-big{font-size:200px}}
+
+.gm-close .intro{margin-top:16px}
+
+@media (prefers-reduced-motion:reduce){.gm-card,.gm-card figure img{transition:none}.gm-reticle.land i,.gm-cross.fire circle.c2{animation:none}}
+
+/* typographic art (online) */
+.gm-type{position:relative;display:grid;place-items:center;align-content:center;gap:4px;background:radial-gradient(80% 90% at 50% 40%,rgba(99,89,230,.45),transparent 70%),var(--k90)}
+.gm-type span{font-size:clamp(56px,7vw,96px);line-height:1;font-weight:800;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px #8B83FF}
+.gm-type i{font-style:normal;font-size:12px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;color:#8B83FF}
+@media (max-width:734px){.gm-stats{gap:16px 28px}.gm-stats .stat b{font-size:40px}}

@@ -1,0 +1,61 @@
+/* DARTMAN design tokens — from Brand Guidebook V2.1 (Aug 2026) + Apple Watch page measurements (_research/apple-teardown.md)
+   Rule from the VI: base colours (black / grey / white and their tints) ≥ 85% of any layout; accents ≤ 15%, never large backgrounds. */
+@font-face{font-family:"Hanken Grotesk";src:url(/anas-dartman/fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype-variations"),url(/anas-dartman/fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype");font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  /* — brand base (VI p.21) — */
+  --black:#000000; --grey:#C8C8C8; --white:#FFFFFF;
+  /* tints of black (VI allows 10–90% steps) */
+  --k95:#0D0D0D; --k90:#1A1A1A; --k85:#262626; --k75:#404040; --k60:#666666; --k45:#8C8C8C; --k30:#B3B3B3; --k10:#E6E6E6; --k05:#F2F2F2; --k03:#F7F7F7;
+
+  /* — brand accents (VI p.23) — max 15% of a layout — */
+  --orange:#E46A58;   /* 大银橘 DAYIN orange · brand core · energy · trust */
+  --yellow:#FFE730;   /* 派对黄 party yellow · gathering · happy */
+  --violet:#6359E6;   /* 紫潮蓝 purple-blue · immersion · night */
+  --green:#6CE15A;    /* 青萤绿 neon green · young · fresh · energy */
+  --pink:#DF50C0;     /* 微醺粉 tipsy pink · social · warm · tipsy */
+  --accent:var(--orange);
+  --accent-ink:#111111;
+
+  /* — machine finishes (swatches only, never UI colour) — */
+  --finish-black:#1B1B1B; --finish-silver:#B9BCC0; --finish-gold:#C9A877; --finish-pink:#EDB6B0; --finish-orange:#E8552C;
+
+  /* — type (Hanken Grotesk only; numbers tabular) — */
+  --font:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --fw-display:700; --fw-head:650; --fw-body:400; --fw-strong:600;
+  /* Apple scale (desktop → mobile set in media query) */
+  --fs-hero-xl:96px; --lh-hero-xl:1.04; --ls-hero-xl:-0.035em;
+  --fs-hero:80px;    --lh-hero:1.05;    --ls-hero:-0.03em;
+  --fs-display:64px; --lh-display:1.06; --ls-display:-0.025em;
+  --fs-h1:56px;      --lh-h1:1.07;      --ls-h1:-0.022em;
+  --fs-h2:48px;      --lh-h2:1.08;      --ls-h2:-0.018em;
+  --fs-h3:32px;      --lh-h3:1.125;     --ls-h3:-0.012em;
+  --fs-card:28px;    --lh-card:1.14;    --ls-card:-0.006em;
+  --fs-intro:21px;   --lh-intro:1.38;   --ls-intro:0.002em;
+  --fs-body:17px;    --lh-body:1.47;    --ls-body:-0.01em;
+  --fs-small:14px;   --lh-small:1.43;
+  --fs-cap:12px;     --lh-cap:1.33;
+  --fs-stat:64px;
+
+  /* — layout — */
+  --content-max:1260px; --text-max:980px; --copy-max:680px; --media-max:1680px;
+  --gutter:clamp(16px,4vw,40px);
+  --pad-y:144px; --pad-y-lg:200px;
+  --nav-h:48px; --lnav-h:52px;
+  --r-xs:8px; --r-sm:13px; --r-md:18px; --r-lg:28px; --r-xl:40px; --r-pill:980px;
+  --gap:24px;
+
+  /* — motion (Apple curves measured on apple.com) — */
+  --dur-1:160ms; --dur-2:240ms; --dur-3:320ms; --dur-4:600ms; --dur-5:1000ms;
+  --ease:cubic-bezier(.4,0,.6,1); --ease-out:cubic-bezier(0,0,.2,1); --ease-soft:cubic-bezier(.25,.1,.3,1); --ease-expo:cubic-bezier(.16,1,.3,1);
+
+  /* — themes — */
+  --glass-dark:rgba(13,13,13,.72); --glass-light:rgba(250,250,250,.78);
+}
+@media (max-width:1068px){:root{--fs-hero-xl:72px;--fs-hero:64px;--fs-display:52px;--fs-h1:48px;--fs-h2:40px;--fs-stat:52px;--pad-y:112px;--pad-y-lg:144px}}
+@media (max-width:734px){:root{--fs-hero-xl:48px;--fs-hero:40px;--fs-display:40px;--fs-h1:34px;--fs-h2:32px;--fs-h3:24px;--fs-card:21px;--fs-intro:19px;--fs-stat:44px;--pad-y:80px;--pad-y-lg:104px;--r-lg:22px;--gap:16px}}
+
+/* theme surfaces: set data-theme on any section */
+[data-theme="dark"]{--bg:var(--black);--bg-alt:var(--k95);--surface:var(--k90);--surface-2:var(--k85);--ink:#F5F5F5;--ink-2:var(--k45);--ink-3:rgba(255,255,255,.56);--hair:rgba(255,255,255,.14);color-scheme:dark}
+[data-theme="light"]{--bg:var(--white);--bg-alt:var(--k03);--surface:var(--k05);--surface-2:var(--white);--ink:#111111;--ink-2:var(--k60);--ink-3:rgba(0,0,0,.56);--hair:rgba(0,0,0,.12);color-scheme:light}
+[data-theme="grey"]{--bg:var(--k05);--bg-alt:var(--white);--surface:var(--white);--surface-2:var(--white);--ink:#111111;--ink-2:var(--k60);--ink-3:rgba(0,0,0,.56);--hair:rgba(0,0,0,.12);color-scheme:light}

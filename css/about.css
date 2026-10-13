@@ -1,0 +1,39 @@
+/* /about/ */
+.ab-hero{position:relative;overflow:hidden;min-height:max(640px,88svh);display:flex;align-items:center;padding:calc(var(--nav-h) + 64px) 0 80px}
+.ab-hero-in{position:relative}
+.ab-hero .intro{max-width:640px;margin:22px auto 0}
+.ab-mark{display:block;width:88px;height:88px;margin:0 auto 28px;background:var(--ink);-webkit-mask:url(/anas-dartman/assets/brand/logomark.svg) center/contain no-repeat;mask:url(/anas-dartman/assets/brand/logomark.svg) center/contain no-repeat}
+
+.ab-head{max-width:760px;margin-bottom:56px}
+.ab-head.center{margin-inline:auto}
+.ab-head .intro{margin-top:16px}
+
+.ab-b{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px 26px 30px;border-radius:var(--r-lg);background:var(--k05);overflow:hidden;min-height:300px}
+.ab-g{font-size:120px;line-height:.8;font-weight:300;color:var(--c);margin-bottom:auto;letter-spacing:-.04em}
+.ab-b .card-t{margin-top:24px}
+
+.ab-words-line{font-size:clamp(32px,4.4vw,56px);line-height:1.12;font-weight:650;letter-spacing:-.025em}
+
+.ab-dayin .ab-d-intro{max-width:680px;margin-top:20px}
+.ab-d-hero{margin:56px 0 0;height:min(86vh,820px);overflow:hidden}
+.ab-d-hero img{width:100%;height:100%;object-fit:cover}
+.ab-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin-top:64px;border-top:1px solid var(--hair);padding-top:32px}
+.ab-steps span{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--orange)}
+.ab-steps .card-t{font-size:21px;margin:10px 0 8px}
+.ab-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:56px}
+.ab-trio figcaption{position:absolute;left:16px;bottom:14px;padding:6px 12px;border-radius:var(--r-pill);background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:12px;font-weight:600;color:#fff}
+@media (max-width:1068px){.ab-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:734px){.ab-steps{grid-template-columns:1fr;gap:20px}.ab-trio{grid-template-columns:1fr 1fr}.ab-trio figure:last-child{grid-column:1/-1;aspect-ratio:2/1}.ab-d-hero{height:70vh}}
+
+.ab-places{margin-top:48px}
+.ab-place .media{margin-bottom:20px}
+.ab-tag{font-size:12px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.ab-place .small{margin-top:8px}
+.ab-note{margin-top:32px}
+
+.ab-aw{max-width:980px;margin-inline:auto}
+.ab-cert{display:flex;flex-direction:column;gap:20px;padding:24px;border-radius:var(--r-lg);background:var(--k05)}
+.ab-cert figure{background:#fff;border-radius:18px;padding:clamp(16px,3vw,32px);box-shadow:0 20px 60px -40px rgba(0,0,0,.4)}
+.ab-cert img{width:100%;height:auto;max-height:560px;object-fit:contain}
+.ab-cert .small{margin-top:4px}
+.ab-close .ctas{justify-content:center}

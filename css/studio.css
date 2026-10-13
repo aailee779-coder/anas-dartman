@@ -1,0 +1,78 @@
+/* /studio/ — playful poster wall in the x/o language */
+.st-hero{position:relative;overflow:hidden;min-height:max(720px,100svh);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:calc(var(--nav-h) + 40px) 0 88px}
+.st-stage-wrap{position:absolute;left:0;right:0;top:calc(var(--nav-h) + 20px);bottom:clamp(250px,34svh,320px);display:grid;place-items:center;z-index:0}
+.st-stage{position:relative;width:min(600px,86vw,calc(100svh - var(--nav-h) - 360px));min-width:240px;aspect-ratio:1;display:grid;place-items:center;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease-out)}
+.st-ring{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:invert(1);opacity:.85;animation:st-spin 40s linear infinite}
+.st-ox{width:44%;aspect-ratio:1;background:#fff;-webkit-mask:url(/anas-dartman/assets/brand/logomark.svg) center/contain no-repeat;mask:url(/anas-dartman/assets/brand/logomark.svg) center/contain no-repeat;filter:drop-shadow(0 0 60px rgba(223,80,192,.35))}
+.st-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 44%,rgba(223,80,192,.16),transparent 70%),linear-gradient(0deg,#000 8%,transparent 46%);pointer-events:none;z-index:1}
+.st-hero-copy{position:relative;z-index:2}
+.st-hero-copy .intro{max-width:620px;margin:20px auto 0}
+@keyframes st-spin{to{rotate:360deg}}
+
+/* marquee */
+.st-marquee{overflow:hidden;padding:28px 0;border-block:1px solid var(--hair)}
+.st-mq{white-space:nowrap;font-size:clamp(40px,7vw,104px);line-height:1.05;font-weight:800;letter-spacing:-.03em;will-change:transform}
+.st-mq span{display:inline-block;padding-right:.4em}
+.st-mq-2{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.5);font-size:clamp(32px,5vw,72px)}
+.st-mq i{font-style:normal;display:inline-block;margin:0 .15em}
+.st-mq .x{color:var(--orange)}.st-mq .o{color:var(--yellow)}.st-mq .s{color:var(--pink)}
+.st-mq-2 i{-webkit-text-stroke:0}
+
+/* poster wall */
+.st-wall-h{margin-bottom:48px}
+.st-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(300px,auto);gap:var(--gap)}
+.st-poster{position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--k95);box-shadow:inset 0 0 0 1px var(--hair);padding:28px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px;isolation:isolate}
+.st-tall{grid-row:span 2}
+.st-wide{grid-column:span 2}
+.st-pt{font-size:clamp(44px,5.4vw,80px);line-height:.95;font-weight:800;letter-spacing:-.04em;position:relative;z-index:2}
+.st-pt::first-line{color:var(--c,#fff)}
+.st-pn{position:absolute;top:24px;left:28px;font-size:12px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);z-index:2}
+.st-glyph{position:absolute;right:-6%;top:-14%;font-size:clamp(260px,26vw,380px);line-height:1;font-weight:300;color:var(--c);opacity:.95;pointer-events:none}
+.st-p2{display:grid;place-items:center;background:#000}
+.st-p2 img{width:78%;height:auto;filter:invert(1)}
+.st-p3 .st-pat{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:invert(1);opacity:.32;z-index:0}
+.st-p4{align-items:center;justify-content:center;background:var(--k90)}
+.st-xos{display:flex;gap:.25em;font-size:clamp(120px,17vw,260px);line-height:.9;font-weight:800;letter-spacing:-.04em}
+.st-xos .o{color:var(--yellow)}.st-xos .x{color:var(--orange)}.st-xos .s{color:var(--pink)}
+.st-xos span{display:inline-block;will-change:transform}
+.st-p5 .st-circ{position:absolute;right:-18%;top:-16%;width:86%;height:auto;filter:invert(1);opacity:.55;z-index:0}
+.st-p6{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:24px}
+.st-p6 .st-pat2{width:min(42%,300px);height:auto;filter:invert(1);opacity:.6;align-self:center}
+@media (max-width:1068px){.st-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.st-tall{grid-row:span 1}}
+@media (max-width:734px){.st-wall{grid-template-columns:1fr}.st-wide{grid-column:auto}.st-poster{min-height:320px;padding:22px}.st-pn{left:22px}.st-p6 .st-pat2{width:36%}}
+
+/* language */
+.st-lang-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.st-lang .intro{margin-top:18px}
+.st-demo img{width:100%;height:auto;border-radius:var(--r-lg);box-shadow:0 30px 80px -40px rgba(0,0,0,.35)}
+@media (max-width:1068px){.st-lang-in{grid-template-columns:1fr}}
+
+/* first access */
+.st-first{position:relative;overflow:hidden}
+.st-first-in{position:relative}
+.st-first .intro{margin-top:18px}
+
+/* email capture (same block in gear.css / support.css — candidate for site.css) */
+.capture{margin-top:32px;text-align:left}
+.capture-row{display:flex;gap:10px;padding:6px;border-radius:var(--r-pill);background:var(--surface);box-shadow:inset 0 0 0 1px var(--hair);transition:box-shadow var(--dur-2) var(--ease)}
+.capture-row:focus-within{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.capture input{flex:1;min-width:0;height:44px;padding:0 18px;border:0;background:transparent;font:inherit;font-size:17px;color:var(--ink);outline:none}
+.capture input::placeholder{color:var(--ink-3)}
+.capture .btn{flex:none}
+.capture-msg{min-height:1.5em;margin:12px 4px 4px}
+.capture-msg.ok{color:var(--ink)}.capture-msg.err{color:#FF8A78}
+.capture .cap{margin-left:4px}
+.capture.done .capture-row{opacity:.5;pointer-events:none}
+@media (max-width:420px){.capture-row{flex-direction:column;border-radius:22px}.capture .btn{width:100%}}
+
+@media (prefers-reduced-motion:reduce){.st-ring{animation:none}.st-stage{transition:none}}
+/* merch (2026-10-12) */
+.st-merch .intro{margin-top:14px;max-width:34em}
+.st-merch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px}
+.st-merch-i{border-radius:var(--r-lg);background:var(--k90);padding:18px 18px 22px;box-shadow:inset 0 0 0 1px var(--hair);transition:transform .5s var(--ease-expo),box-shadow .3s}
+.st-merch-i:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:inset 0 0 0 1px rgba(223,80,192,.6)}
+.st-merch-pic{aspect-ratio:4/3;border-radius:14px;background:#fff;display:grid;place-items:center;overflow:hidden}
+.st-merch-pic img{max-width:88%;max-height:88%;object-fit:contain}
+.st-merch-i b{display:block;margin-top:16px;font-size:19px;color:#fff}
+.st-merch-i span{display:block;margin-top:4px;font-size:14px;color:#a8a8a8}
+@media (max-width:900px){.st-merch-grid{grid-template-columns:1fr 1fr}}@media (max-width:520px){.st-merch-grid{grid-template-columns:1fr}}

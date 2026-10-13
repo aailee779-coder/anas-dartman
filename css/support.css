@@ -1,0 +1,90 @@
+/* /support/ and /contact/ */
+.sp-quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:48px}
+.sp-quick a{display:flex;flex-direction:column;gap:4px;padding:22px 24px;border-radius:22px;background:var(--k05);transition:background var(--dur-2) var(--ease),transform var(--dur-2) var(--ease)}
+.sp-quick a:hover{background:var(--k10)}
+.sp-quick a:active{transform:scale(.98)}
+.sp-quick b{font-size:19px;font-weight:650;letter-spacing:-.01em}
+.sp-quick span{font-size:var(--fs-small);color:var(--ink-2)}
+@media (max-width:900px){.sp-quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* FAQ */
+.sp-faq{padding-top:48px}
+.sp-faq-in{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:56px;align-items:start}
+.sp-faq-side{position:sticky;top:calc(var(--nav-h) + 40px)}
+.sp-faq-side .body{margin-top:16px}
+.sp-acc{border-top:1px solid var(--hair)}
+.sp-acc details{border-bottom:1px solid var(--hair)}
+.sp-acc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:72px;padding:18px 0;font-size:21px;font-weight:650;letter-spacing:-.012em;cursor:pointer}
+.sp-acc summary::-webkit-details-marker{display:none}
+.sp-acc summary::after{content:"";flex:none;width:12px;height:12px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:translateY(-3px) rotate(45deg);transition:transform var(--dur-3) var(--ease-expo)}
+.sp-acc details[open] summary::after{transform:translateY(3px) rotate(-135deg)}
+.sp-acc summary:hover::after{border-color:var(--ink)}
+.sp-a{padding:0 40px 26px 0;color:var(--ink-2);font-size:var(--fs-body)}
+.sp-a p+p{margin-top:10px}
+.sp-a strong{color:var(--ink);font-weight:600}
+@supports (interpolate-size:allow-keywords){
+  .sp-acc{interpolate-size:allow-keywords}
+  .sp-acc details::details-content{height:0;overflow:clip;transition:height var(--dur-3) var(--ease-out),content-visibility var(--dur-3) allow-discrete}
+  .sp-acc details[open]::details-content{height:auto}
+}
+@media (max-width:900px){.sp-faq-in{grid-template-columns:1fr;gap:28px}.sp-faq-side{position:static}.sp-acc summary{font-size:19px}.sp-a{padding-right:0}}
+@media (prefers-reduced-motion:reduce){.sp-acc details::details-content{transition:none}}
+
+/* manuals */
+.sp-man-intro{margin-top:14px}
+.sp-docs{display:grid;gap:12px;margin-top:40px}
+.sp-docs li{display:flex;align-items:center;gap:20px;padding:22px 26px;border-radius:22px;background:var(--surface)}
+.sp-docs li>div{flex:1}
+.sp-doc-ic{flex:none;display:grid;place-items:center;width:52px;height:64px;border-radius:10px;background:var(--k05);font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--orange);box-shadow:inset 0 0 0 1px var(--hair)}
+.sp-doc-t{font-size:19px;font-weight:650;letter-spacing:-.01em;margin-bottom:2px}
+.sp-man-foot{margin-top:24px}
+@media (max-width:600px){.sp-docs li{flex-wrap:wrap;padding:18px}.sp-docs li>.tbc{margin-left:72px}}
+
+/* warranty */
+.sp-war-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.sp-war-big{display:flex;flex-direction:column;align-items:center}
+.sp-war-big b{font-size:clamp(160px,22vw,300px);line-height:.85;font-weight:800;letter-spacing:-.06em;color:var(--ink);font-variant-numeric:tabular-nums}
+.sp-war-big span{font-size:21px;font-weight:650;color:var(--orange);margin-top:8px}
+.sp-war .intro{margin-top:18px}
+.sp-war-note{margin-top:16px}
+@media (max-width:900px){.sp-war-in{grid-template-columns:1fr;gap:16px}}
+
+/* install */
+.sp-in-head{max-width:760px;margin-bottom:48px}
+.sp-in-head .intro{margin-top:18px}
+.sp-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:40px}
+.sp-steps li{display:flex;flex-direction:column;gap:12px;font-size:var(--fs-body);font-weight:500;color:var(--ink)}
+.sp-steps span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--orange);color:var(--orange);font-weight:700;font-size:15px}
+@media (max-width:900px){.sp-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sp-contact .intro{margin-top:14px}
+
+/* contact */
+.ct{padding-bottom:var(--pad-y)}
+.ct-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.ct-side .intro{margin-top:20px;max-width:440px}
+.ct-ways{margin-top:40px;border-top:1px solid var(--hair)}
+.ct-ways li{display:flex;flex-direction:column;gap:4px;padding:20px 0;border-bottom:1px solid var(--hair)}
+.ct-ways b{font-size:17px;font-weight:650}
+.ct-ways span{font-size:var(--fs-small);color:var(--ink-2)}
+.ct-ways .link{margin-top:4px;font-size:15px}
+.ct-form{padding:clamp(24px,4vw,44px);border-radius:var(--r-lg);background:var(--k05)}
+.ct-form .h3{margin-bottom:24px}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;margin-bottom:24px}
+.ct-full{grid-column:1/-1}
+.field label{display:block;font-size:var(--fs-small);font-weight:600;margin-bottom:6px}
+.field .opt{font-weight:400;color:var(--ink-2)}
+.field input:not([type=checkbox]),.field select,.field textarea{width:100%;min-height:48px;padding:12px 16px;border-radius:14px;border:1px solid var(--hair);background:#fff;font:inherit;font-size:17px;color:var(--ink);transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.field textarea{resize:vertical;min-height:140px}
+.field select{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23666' stroke-width='1.8'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+.field [aria-invalid=true]{border-color:#C2412F}
+.field-err{margin-top:6px;font-size:13px;color:#C2412F}
+.ct-check{display:flex;align-items:center;gap:12px}
+.ct-check input{width:22px;height:22px;accent-color:var(--orange);flex:none}
+.ct-check label{margin:0;font-weight:500}
+.form-msg{min-height:1.5em;margin-top:14px;font-size:var(--fs-small)}
+.form-msg.ok{color:var(--ink);font-weight:600}.form-msg.err{color:#C2412F}
+.ct-form.done .ct-grid{opacity:.5;pointer-events:none}
+.ct-form .cap{margin-top:6px}
+@media (max-width:900px){.ct-in{grid-template-columns:1fr;gap:40px}}
+@media (max-width:520px){.ct-grid{grid-template-columns:1fr}.ct-form .btn{width:100%}}

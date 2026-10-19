@@ -87,6 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   });
 
+  /* floating CTA: shows after the first screen, hides near the footer */
+  const fc = $('[data-ufcta]');
+  if (fc) { const ft = $('footer'); const fu = () => { const nearEnd = ft && ft.getBoundingClientRect().top < innerHeight; fc.classList.toggle('on', scrollY > innerHeight * .8 && !nearEnd); };
+    addEventListener('scroll', fu, { passive: true }); fu(); }
+
+  /* venue finder: filter by type */
+  $$('[data-ufinder]').forEach(f => {
+    const items = $$('.u-sf-list li[data-type]', f), empty = $('.u-sf-empty', f), chips = $$('.u-sf-chips button', f);
+    chips.forEach(c => c.addEventListener('click', () => { chips.forEach(x => x.classList.toggle('on', x === c)); let n = 0;
+      items.forEach(li => { const on = c.dataset.f === 'all' || li.dataset.type === c.dataset.f; li.hidden = !on; if (on) n++; }); empty.hidden = n > 0; }));
+    const form = $('.u-sf-form', f); if (form) form.addEventListener('submit', e => e.preventDefault());
+  });
+
+  /* event filter */
+  $$('[data-uevents]').forEach(w => {
+    const seg = $('.u-seg', w), bs = $$('.u-seg button', w), items = $$('.u-ev-grid li', w);
+    bs.forEach((b, k) => b.addEventListener('click', () => { bs.forEach(x => x.setAttribute('aria-selected', x === b)); seg.classList.remove('k1', 'k2'); if (k) seg.classList.add('k' + k);
+      items.forEach(li => { li.hidden = !(b.dataset.f === 'all' || li.dataset.cat === b.dataset.f); }); }));
+  });
+
   /* dialogs */
   $$('[data-uopen]').forEach(a => a.addEventListener('click', e => { const dl = d.getElementById(a.dataset.uopen); if (dl && dl.showModal) { e.preventDefault(); dl.showModal(); } }));
   $$('.u-dlg').forEach(dl => { $('[data-uclose]', dl).onclick = () => dl.close(); dl.addEventListener('click', e => { if (e.target === dl) dl.close(); }); });

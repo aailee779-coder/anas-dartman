@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
       items.forEach(li => { li.hidden = !(b.dataset.f === 'all' || li.dataset.cat === b.dataset.f); }); }));
   });
 
+  /* speech: the line appears word by word, as if spoken */
+  $$('[data-uspeak]').forEach(b => {
+    const h = $('h2', b); const words = h.textContent.trim().split(/\s+/);
+    h.innerHTML = words.map((w, i) => `<span class="w" style="transition-delay:${(i * .16 + .25).toFixed(2)}s">${w}</span>`).join(' ');
+    const io3 = new IntersectionObserver(es => es.forEach(e => b.classList.toggle('talk', e.isIntersecting)), { threshold: .55 });
+    io3.observe(b.closest('figure') || b);
+  });
+
   /* dialogs */
   $$('[data-uopen]').forEach(a => a.addEventListener('click', e => { const dl = d.getElementById(a.dataset.uopen); if (dl && dl.showModal) { e.preventDefault(); dl.showModal(); } }));
   $$('.u-dlg').forEach(dl => { $('[data-uclose]', dl).onclick = () => dl.close(); dl.addEventListener('click', e => { if (e.target === dl) dl.close(); }); });

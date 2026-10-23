@@ -1044,3 +1044,7 @@ body.gn-on .u-ln{top:48px}
 .u-dl .u-qr img{width:100%;height:100%;display:block}
 .u-wx{margin-top:24px;padding:14px 18px;border-radius:14px;background:#2a2a2c;color:#f5f5f7;font-size:15px;line-height:1.45;max-width:520px}
 .u-wx.flash{outline:2px solid #0071e3}
+/* store badges: identical size */
+.u-dl-btns .u-store-b{width:220px;height:64px;box-sizing:border-box;justify-content:flex-start}
+.u-dl-btns .u-store-b svg{width:28px;height:28px;flex:0 0 28px}
+@media (max-width:734px){.u-dl-btns{flex-direction:column;align-items:flex-start}.u-dl-btns .u-store-b{width:240px}}

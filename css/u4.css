@@ -1020,3 +1020,21 @@ body.gn-on .u-ln{top:48px}
 @media (max-width:734px){.u-dl-grid{grid-template-columns:1fr;gap:40px}}
 .u-bubble{top:33%}.u-pl-grid li.soon{grid-column:1/-1}
 @media (max-width:734px){.u-fcta a{white-space:nowrap;font-size:14px;padding:11px 18px;border-radius:999px}.u-fcta{gap:8px}.u-lines-grid .u-more{position:static;margin:14px 0 22px}.u-lines-grid img{max-height:55%}}
+
+/* spoken quote over the player (sketch: quote top-right, above her hand) */
+.u-say-f::after{display:none}
+.u-say-f img{object-position:50% 0}
+.u-say{position:absolute;right:6%;top:8%;z-index:3;width:min(560px,40%);margin:0;color:#fff;text-align:left}
+.u-say .u-eb{color:rgba(255,255,255,.6);margin-bottom:14px}
+.u-say h2{font-size:clamp(30px,3.6vw,56px);line-height:1.05;font-weight:600;letter-spacing:-.02em;text-indent:-.4em}
+.u-say .sq{margin-top:14px;font-size:clamp(19px,1.7vw,26px);line-height:1.3;color:rgba(255,255,255,.82)}
+.u-say .w{display:inline-block;opacity:0;transform:translateY(.3em);transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.u-say.talk .w{opacity:1;transform:none}
+.u-say-note{margin-top:40px;color:#86868b}
+@media (max-width:734px){
+  .u-say{position:static;width:auto;padding:32px 20px 0;background:#111}
+  .u-say h2{font-size:30px;text-indent:0}
+  .u-say-f{display:flex;flex-direction:column}
+}
+.u-say h2,.u-say .sq{word-spacing:0}
+.u-say .w{text-indent:0}

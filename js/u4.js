@@ -109,8 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* speech: the line appears word by word, as if spoken */
   $$('[data-uspeak]').forEach(b => {
-    const h = $('h2', b); const words = h.textContent.trim().split(/\s+/);
-    h.innerHTML = words.map((w, i) => `<span class="w" style="transition-delay:${(i * .16 + .25).toFixed(2)}s">${w}</span>`).join(' ');
+    let n = 0;
+    $$('h2,.sq', b).forEach(h => { const words = h.textContent.trim().split(/\s+/);
+      h.innerHTML = words.map(w => `<span class="w" style="transition-delay:${(n++ * .14 + .3).toFixed(2)}s">${w}</span>`).join(' '); });
     const io3 = new IntersectionObserver(es => es.forEach(e => b.classList.toggle('talk', e.isIntersecting)), { threshold: .55 });
     io3.observe(b.closest('figure') || b);
   });

@@ -149,3 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
     steps.forEach(s => io2.observe(s));
   });
 });
+
+/* in-app browsers (WeChat, etc.) block store links: show how to open in the real browser */
+(function () {
+  const ua = navigator.userAgent || '';
+  if (!/MicroMessenger|WeChat|QQ\/|Weibo|FBAN|FBAV|Instagram|Line\//i.test(ua)) return;
+  document.querySelectorAll('.u-wx').forEach(n => { n.hidden = false; });
+  document.querySelectorAll('a[href*="apps.apple.com"],a[href*="play.google.com"]').forEach(a => a.addEventListener('click', () => {
+    const n = a.closest('section') && a.closest('section').querySelector('.u-wx');
+    if (n) { n.hidden = false; n.classList.add('flash'); setTimeout(() => n.classList.remove('flash'), 900); }
+  }));
+})();

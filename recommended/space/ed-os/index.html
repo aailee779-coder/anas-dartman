@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/anas-dartman/css/site.css">
 <link rel="stylesheet" href="/anas-dartman/css/rec.css">
 <link rel="stylesheet" href="/anas-dartman/css/u4.css">
+<link rel="stylesheet" href="/anas-dartman/css/u5.css">
 </head>
 <body data-theme="dark" class="rec u4">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,10 +24,10 @@
     <a class="blogo" href="/anas-dartman/recommended/" aria-label="DARTMAN home"><i class="logo-mark" aria-hidden="true"></i><i class="logo-word" aria-hidden="true"></i></a>
     <ul class="bmenu" role="list">
       <li><a href="/anas-dartman/recommended/" data-nav="rhome">Home</a></li>
-      <li><a href="/anas-dartman/recommended/space/" data-nav="rspace" aria-current="page">Space</a></li>
+      <li class="bsub-li"><a href="/anas-dartman/recommended/space/" data-nav="rspace" aria-current="page">Space</a><ul class="bsub" role="list"><li><a href="/anas-dartman/recommended/space/">EDmini</a></li><li><a href="/anas-dartman/recommended/space/ed-os/">ED OS</a></li><li><a href="/anas-dartman/recommended/space/ed-hub/">ED hub</a></li></ul></li>
       <li><a href="/anas-dartman/recommended/gear/" data-nav="rgear">Gear</a></li>
       <li><a href="/anas-dartman/recommended/studio/" data-nav="rstudio">Studio</a></li>
-      <li><a href="/anas-dartman/recommended/event/" data-nav="revent">Event</a></li>
+      <li class="bsub-li"><a href="/anas-dartman/recommended/event/" data-nav="revent">Event</a><ul class="bsub" role="list"><li><a href="/anas-dartman/recommended/event/#tournaments">Tournaments</a></li><li><a href="/anas-dartman/recommended/event/#news">News</a></li><li><a href="/anas-dartman/recommended/event/#cases">Gallery</a></li></ul></li>
       <li><a href="/anas-dartman/recommended/app/" data-nav="rapp">App</a></li>
     </ul>
     <div class="bicons">
@@ -40,26 +41,25 @@
 <main id="main">
 
 <nav class="u-ln" aria-label="Space"><div class="u-ln-in">
-  <b class="u-ln-t">Space</b>
-  <div class="u-ln-r"><a href="/anas-dartman/recommended/space/">EDmini Max</a><a href="/anas-dartman/recommended/space/ed-os/" class="on">ED OS</a><a href="/anas-dartman/recommended/space/ed-hub/">ED hub</a><a class="u-buy" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy</a></div>
+  <b class="u-ln-t">ED OS</b>
+  <div class="u-ln-r"><a href="#os" class="on">Overview</a><a href="#features">Features</a><a href="#settings">Settings</a><a class="u-buy" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy</a></div>
 </div></nav>
 
 <!-- DM OS -->
-<section class="u-sec" id="os" style="padding-top:96px" aria-labelledby="sw-os">
+<section class="u-sec u5-fit" id="os" aria-labelledby="sw-os">
   <div class="u-w u-c"><p class="u-eb">ED OS · on the machine</p><h1 class="u-h80" id="sw-os">Faster. More direct.<br>Smoother.</h1>
     <p class="u-p21 u-mw">From power-on to game on in three steps. <b>Classic 01 games and original party games</b>, quick player log-in by QR code, and new features delivered over the air.</p></div>
   <figure class="u-w u-go-im"><img src="/anas-dartman/assets/img/machine/machine-ui-home-dark-1600.webp" alt="ED OS home: 01 games, Cricket, Party, Practice, Match, Online" loading="lazy"></figure>
-  <ul class="u-w u-icons" role="list">
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 16h20M18 8l8 8-8 8"/></svg><p><b>Upgraded experience.</b> Three steps from power-on to game on.</p></li>
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="8" width="22" height="16" rx="4"/><path d="M11 16h4M13 14v4M20 15h.01M22 17h.01"/></svg><p><b>Rich games.</b> Classic 01 GAMES and original PARTY GAMES.</p></li>
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="8" height="8"/><rect x="18" y="6" width="8" height="8"/><rect x="6" y="18" width="8" height="8"/><path d="M18 18h3v3h-3zM24 24h2v2h-2z"/></svg><p><b>Player management.</b> Add players fast; log in by scanning a QR code.</p></li>
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 21h14l-2-3v-5a5 5 0 0 0-10 0v5z"/><path d="M14 24a2 2 0 0 0 4 0"/></svg><p><b>Merchant tools.</b> Several billing modes and a service call button.</p></li>
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v14m-6-6 6 6 6-6"/><path d="M6 21v5h20v-5"/></svg><p><b>OTA updates.</b> New features pushed online, continuously.</p></li>
-    <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12a10 10 0 0 1 18-3M26 20a10 10 0 0 1-18 3"/><path d="M24 4v5h-5M8 28v-5h5"/></svg><p><b>Cross-device sync.</b> Player data syncs to the app in real time.</p></li>
-  </ul>
 </section>
 
-<section class="u-sec alt u-pv u-pv-sw" id="settings" aria-labelledby="settings-t">
+<!-- 22 · features as sliding cards -->
+<section class="u-sec alt" id="features" aria-labelledby="sw-ft">
+  <div class="u-w"><h2 class="u-h48" id="sw-ft">What ED OS does.</h2></div>
+  <div class="u-cards u5-rail" data-ucards><ul class="u-cards-track" role="list"><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 16h20M18 8l8 8-8 8"/></svg><b>Upgraded experience.</b><p>Three steps from power-on to game on.</p></li><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="8" width="22" height="16" rx="4"/><path d="M11 16h4M13 14v4M20 15h.01M22 17h.01"/></svg><b>Rich games.</b><p>Classic 01 GAMES and original PARTY GAMES.</p></li><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="8" height="8"/><rect x="18" y="6" width="8" height="8"/><rect x="6" y="18" width="8" height="8"/><path d="M18 18h3v3h-3zM24 24h2v2h-2z"/></svg><b>Player management.</b><p>Add players fast; log in by scanning a QR code.</p></li><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 21h14l-2-3v-5a5 5 0 0 0-10 0v5z"/><path d="M14 24a2 2 0 0 0 4 0"/></svg><b>Merchant tools.</b><p>Several billing modes and a service call button.</p></li><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5v14m-6-6 6 6 6-6"/><path d="M6 21v5h20v-5"/></svg><b>OTA updates.</b><p>New features pushed online, continuously.</p></li><li class="u5-fcard"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12a10 10 0 0 1 18-3M26 20a10 10 0 0 1-18 3"/><path d="M24 4v5h-5M8 28v-5h5"/></svg><b>Cross-device sync.</b><p>Player data syncs to the app in real time.</p></li></ul>
+    <div class="u-arrows"><button type="button" data-prev aria-label="Previous">‹</button><button type="button" data-next aria-label="Next">›</button></div></div>
+</section>
+
+<section class="u-sec alt u-pv u-pv-sw u5-tight" id="settings" aria-labelledby="settings-t">
   <div class="u-w"><p class="u-eb" style="margin-bottom:6px">Merchant settings</p><h2 class="u-h48" id="settings-t">Every setting, on the screen.</h2></div>
   <div class="u-pv-stage" data-upv>
     <div class="u-pv-imgs"><div class="u-dev u-pv-dev"><div class="u-dev-scr"><img class="on" data-k="k0" src="/anas-dartman/assets/img/machine/ed-os-charge-by-game-947.webp" alt="ED OS: charge by game" loading="lazy"><img data-k="k1" src="/anas-dartman/assets/img/machine/ed-os-charge-by-time-948.webp" alt="ED OS: charge by time" loading="lazy"><img data-k="k2" src="/anas-dartman/assets/img/machine/ed-os-happy-hour-951.webp" alt="ED OS: happy hour" loading="lazy"><img data-k="k3" src="/anas-dartman/assets/img/machine/ed-os-operating-hours-946.webp" alt="ED OS: operating hours" loading="lazy"><img data-k="k4" src="/anas-dartman/assets/img/machine/ed-os-led-brightness-945.webp" alt="ED OS: LED brightness" loading="lazy"><img data-k="k5" src="/anas-dartman/assets/img/machine/ed-os-backend-settings-946.webp" alt="ED OS: back-end settings" loading="lazy"></div><i class="u-dev-cam" aria-hidden="true"></i></div></div>
@@ -74,7 +74,7 @@
     <div class="afoot-top">
       <div class="afoot-brand"><a class="blogo" href="/anas-dartman/recommended/" aria-label="DARTMAN home"><i class="logo-mark" aria-hidden="true"></i><i class="logo-word" aria-hidden="true"></i></a><p>Party on darts. Dart is the reason, people are the core.</p><a class="afoot-cta blue" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy EDmini Max</a></div>
       <div class="afoot-cols">
-        <div><h3>Business</h3><a href="/anas-dartman/recommended/business/">Business</a><a href="/anas-dartman/recommended/gallery/">Gallery</a><a href="/anas-dartman/recommended/space/specs/">Packaging &amp; specs</a></div>
+        <div><h3>Business</h3><a href="/anas-dartman/recommended/business/">Business</a><a href="/anas-dartman/recommended/gallery/">Gallery</a><a href="/anas-dartman/recommended/space/#compare">EDmini models</a></div>
         <div><h3>DM system</h3><a href="/anas-dartman/recommended/dm-system/">DM system</a><a href="/anas-dartman/recommended/games/">Games</a><a href="/anas-dartman/recommended/guide/">Know Dart</a><a href="/anas-dartman/recommended/shop/">Where to play</a></div>
         <div><h3>About</h3><a href="/anas-dartman/recommended/about/">About us</a><a href="/anas-dartman/recommended/faq/">FAQ</a><a href="/anas-dartman/recommended/contact/">Contact</a></div>
       </div>
@@ -85,7 +85,7 @@
   </div>
 </footer>
 <a class="rver" href="/anas-dartman/versions/"><b>Version B</b> · Your brief <span>Compare versions</span></a>
-<div class="u-fcta" data-ufcta aria-label="Quick actions"><a class="u-fcta-b" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy EDmini Max</a><a class="u-fcta-q" href="/anas-dartman/recommended/business/#inquiry">Talk to us</a></div>
+<div class="u-fcta u5-fcta" data-ufcta aria-label="Quick actions"><a class="u-fcta-b" href="https://shop.dartmangames.com" target="_blank" rel="noopener" aria-label="Buy EDmini Max"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span>Buy EDmini Max</span></a><a class="u-fcta-q" href="/anas-dartman/recommended/business/#inquiry" aria-label="Talk to us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg><span>Talk to us</span></a></div>
 
 <script src="/anas-dartman/vendor/gsap.min.js" defer></script>
 <script src="/anas-dartman/vendor/ScrollTrigger.min.js" defer></script>
@@ -94,5 +94,6 @@
 <script src="/anas-dartman/js/site.js" defer></script>
 <script src="/anas-dartman/js/rec.js" defer></script>
 <script src="/anas-dartman/js/u4.js" defer></script>
+<script src="/anas-dartman/js/u5.js" defer></script>
 </body>
 </html>

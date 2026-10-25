@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/anas-dartman/css/site.css">
 <link rel="stylesheet" href="/anas-dartman/css/rec.css">
 <link rel="stylesheet" href="/anas-dartman/css/u4.css">
+<link rel="stylesheet" href="/anas-dartman/css/u5.css">
 </head>
 <body data-theme="dark" class="rec u4">
 <a class="skip" href="#main">Skip to content</a>
@@ -23,10 +24,10 @@
     <a class="blogo" href="/anas-dartman/recommended/" aria-label="DARTMAN home"><i class="logo-mark" aria-hidden="true"></i><i class="logo-word" aria-hidden="true"></i></a>
     <ul class="bmenu" role="list">
       <li><a href="/anas-dartman/recommended/" data-nav="rhome">Home</a></li>
-      <li><a href="/anas-dartman/recommended/space/" data-nav="rspace">Space</a></li>
+      <li class="bsub-li"><a href="/anas-dartman/recommended/space/" data-nav="rspace">Space</a><ul class="bsub" role="list"><li><a href="/anas-dartman/recommended/space/">EDmini</a></li><li><a href="/anas-dartman/recommended/space/ed-os/">ED OS</a></li><li><a href="/anas-dartman/recommended/space/ed-hub/">ED hub</a></li></ul></li>
       <li><a href="/anas-dartman/recommended/gear/" data-nav="rgear">Gear</a></li>
       <li><a href="/anas-dartman/recommended/studio/" data-nav="rstudio">Studio</a></li>
-      <li><a href="/anas-dartman/recommended/event/" data-nav="revent">Event</a></li>
+      <li class="bsub-li"><a href="/anas-dartman/recommended/event/" data-nav="revent">Event</a><ul class="bsub" role="list"><li><a href="/anas-dartman/recommended/event/#tournaments">Tournaments</a></li><li><a href="/anas-dartman/recommended/event/#news">News</a></li><li><a href="/anas-dartman/recommended/event/#cases">Gallery</a></li></ul></li>
       <li><a href="/anas-dartman/recommended/app/" data-nav="rapp">App</a></li>
     </ul>
     <div class="bicons">
@@ -44,20 +45,21 @@
   <div class="u-ln-r"><a href="#os">ED OS</a><a href="#app">App</a><a href="#edhub">EDhub</a><a class="u-buy" href="#app">Get the app</a></div>
 </div></nav>
 <!-- HERO -->
-<section class="u-hero" aria-labelledby="sw-h1">
+<section class="u-hero u5-dmhero" aria-labelledby="sw-h1">
   <h1 class="u-hero-logo" id="sw-h1"><span class="u-word">DARTMAN</span><span class="u-word thin">DM SYSTEM</span></h1>
   <p class="u-hero-h">One system.<br>Three screens.</p>
   <p class="u-hero-sub">The machine runs the game. The phone keeps the score. The owner runs it all.</p>
-  <div class="u-w u-tri">
-    <div class="u-dev sm"><div class="u-dev-scr"><img class="on" src="/anas-dartman/assets/img/machine/machine-ui-home-dark-800.webp" alt="ED OS home screen on the machine" fetchpriority="high"></div></div>
-    <div class="u-phone"><img src="/anas-dartman/assets/img/app/app-stats-chart-green-440.webp" alt="DARTMAN App stats"></div>
-    <div class="u-dev sm tab"><div class="u-dev-scr"><img class="on" src="/anas-dartman/assets/img/edhub/edhub-machine-status-800.webp" alt="EDhub machine status"></div></div>
+  <div class="u-w u5-net dk" aria-hidden="true">
+    <svg class="u5-net-bg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet"><g fill="none" stroke="currentColor"><circle cx="500" cy="280" r="120"/><circle cx="500" cy="280" r="200"/><circle cx="500" cy="280" r="280"/><circle cx="500" cy="280" r="360"/></g>
+      <path class="u5-link" d="M215 300 C 330 300, 380 280, 470 280"/><path class="u5-link r" d="M530 280 C 620 280, 670 300, 790 300"/></svg>
+    <figure class="u5-n u5-n-ph"><span class="u5-ph"><img src="/anas-dartman/assets/img/app/app-stats-chart-green-440.webp" alt=""></span><figcaption><em>People</em>DARTMAN App</figcaption></figure>
+    <figure class="u5-n u5-n-mc"><img src="/anas-dartman/assets/img/real/max-front-467.webp" alt=""><figcaption><em>Things</em>EDmini · ED OS</figcaption></figure>
+    <figure class="u5-n u5-n-tb"><span class="u5-tb"><img src="/anas-dartman/assets/img/edhub/edhub-store-overview-800.webp" alt=""></span><figcaption><em>Stores</em>EDhub</figcaption></figure>
   </div>
-  <ul class="u-tri-cap" role="list"><li><b>ED OS</b>on the machine</li><li><b>DARTMAN App</b>in your pocket</li><li><b>EDhub</b>for the owner</li></ul>
 </section>
 
 <!-- DM OS -->
-<section class="u-sec alt" id="os" aria-labelledby="sw-os">
+<section class="u-sec alt u5-fit" id="os" aria-labelledby="sw-os">
   <div class="u-w u-c"><p class="u-eb">ED OS · on the machine</p><h2 class="u-h80" id="sw-os">Faster. More direct.<br>Smoother.</h2>
     <p class="u-p21 u-mw">From power-on to game on in three steps. <b>Classic 01 games and original party games</b>, quick player log-in by QR code, and new features delivered over the air.</p></div>
   <figure class="u-w u-go-im"><img src="/anas-dartman/assets/img/machine/machine-ui-home-dark-1600.webp" alt="ED OS home: 01 games, Cricket, Party, Practice, Match, Online" loading="lazy"></figure>
@@ -72,52 +74,23 @@
 </section>
 
 <!-- APP (white chapter) -->
-<section class="u-sec u-white u-appx" id="app" aria-labelledby="sw-app">
-  <div class="u-w u-appx-grid">
-    <div><p class="u-eb">DARTMAN App · in your pocket</p><h2 class="u-h64" id="sw-app">Your darts party,<br>beyond the bar.</h2>
-      <ul class="u-checks" role="list">
-        <li><b>Highlight moments.</b> The app builds your personal highlight reel, so every game-winning shot is remembered.</li>
-        <li><b>Digital identity.</b> Profile card, growth curve, match history, personal themes and game effects.</li>
-        <li><b>Social circle.</b> Highlights, global and friends leaderboards, players to follow.</li>
-        <li><b>Explore.</b> Find darts venues, scan to log in, online and in-store events.</li>
-        <li><b>Challenges.</b> Complete missions and claim surprise in-game gift packs.</li>
-      </ul>
-      <div class="u-stores"><a class="u-btn" href="#app">Download on the App Store</a><a class="u-btn ghost" href="#app">Get it on Google Play</a></div>
-      <p class="u-small">Store links and download QR code to add when the listings are live.</p></div>
-    <img src="/anas-dartman/assets/img/b/app-phones.webp" alt="DARTMAN App screens" loading="lazy">
+<section class="u-sec u-white u5-app" id="app" aria-labelledby="sw-app">
+  <div class="u-w u-c">
+    <span class="u5-appicon" aria-hidden="true"><i class="logo-mark"></i></span>
+    <p class="u5-appname">DARTMAN App</p>
+    <h2 class="u-h80" id="sw-app">Play, track, share.<br>All in one app.</h2>
+    <p class="u5-applead">The DARTMAN App is your darts life outside the bar: <b>a personal highlight reel, a profile card with your growth curve, global and friends leaderboards, venues near you, and missions with surprise gift packs.</b> Scan the QR code on any EDmini to play as you.</p>
+    <div class="u5-appbtns"><a class="u-btn" href="/anas-dartman/recommended/app/">Learn more</a><a class="u-btn ghost" href="/anas-dartman/recommended/app/#download">Download</a></div>
   </div>
-  <div class="u-cards u-marq" data-umarq>
-    <ul class="u-cards-track" role="list">
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-stats-chart-green-440.webp" alt="" loading="lazy"></div><p><b>Stats.</b> Your average, trend and best rounds.</p></li>
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-badges-440.webp" alt="" loading="lazy"></div><p><b>Badges.</b> Pin the ones you're proud of.</p></li>
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-led-effects-440.webp" alt="" loading="lazy"></div><p><b>LED effects.</b> Your own light show on the target.</p></li>
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-stores-map-440.webp" alt="" loading="lazy"></div><p><b>Find venues.</b> Every EDmini near you, on the map.</p></li>
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-shop-440.webp" alt="" loading="lazy"></div><p><b>Shop.</b> Themes, cards and sounds for your profile.</p></li>
-      <li><div class="u-card-im ph"><img src="/anas-dartman/assets/img/app/app-login-440.webp" alt="" loading="lazy"></div><p><b>Log in.</b> Scan the machine's QR code and play as you.</p></li>
-    </ul>
-  </div>
+  <div class="u5-phones"><figure class="u5-phone"><span><img src="/anas-dartman/assets/img/app/app-login-440.webp" alt="Log in screen" loading="lazy" width="440" height="956"></span></figure><figure class="u5-phone"><span><img src="/anas-dartman/assets/img/app/app-stats-chart-green-440.webp" alt="Stats screen" loading="lazy" width="440" height="956"></span></figure><figure class="u5-phone"><span><img src="/anas-dartman/assets/img/app/app-badges-440.webp" alt="Badges screen" loading="lazy" width="440" height="956"></span></figure><figure class="u5-phone"><span><img src="/anas-dartman/assets/img/app/app-led-effects-440.webp" alt="LED effects screen" loading="lazy" width="440" height="956"></span></figure><figure class="u5-phone"><span><img src="/anas-dartman/assets/img/app/app-stores-map-440.webp" alt="Venue map screen" loading="lazy" width="440" height="956"></span></figure></div>
 </section>
 
 <!-- EDHUB (sticky screen) -->
-<section class="u-sec alt u-soft" id="edhub" aria-labelledby="sw-hub">
-  <div class="u-w"><p class="u-eb">EDhub · for the owner</p><h2 class="u-h64" id="sw-hub">Manage smarter.<br>Work less.</h2></div>
-  <div class="u-w u-soft-grid" data-usoft>
-    <div class="u-soft-steps">
-      <div class="u-step on" data-k="0"><b>Revenue.</b> Live dashboard, trends, peak hours and automatic bookkeeping.</div>
-      <div class="u-step" data-k="1"><b>Machines.</b> Remote open, lock, pricing and modes for every machine.</div>
-      <div class="u-step" data-k="2"><b>Open a machine.</b> Choose time or credit mode and confirm in one tap.</div>
-      <div class="u-step" data-k="3"><b>Ads &amp; events.</b> Put promotions on screen; run leagues and themed nights.</div>
-      <div class="u-step" data-k="4"><b>Service bell &amp; permissions.</b> One-tap calls, and the right access for every staff member.</div>
-    </div>
-    <div class="u-soft-dev"><div class="u-dev">
-      <div class="u-dev-scr">
-        <img class="on" src="/anas-dartman/assets/img/edhub/edhub-store-overview-1600.webp" alt="EDhub store overview" loading="lazy">
-        <img src="/anas-dartman/assets/img/edhub/edhub-machine-status-1600.webp" alt="EDhub machine status" loading="lazy">
-        <img src="/anas-dartman/assets/img/edhub/edhub-open-machine-dialog-857.webp" alt="EDhub: open a machine" loading="lazy" class="ct">
-        <img src="/anas-dartman/assets/img/edhub/edhub-desktop-image-setting-1600.webp" alt="EDhub screen promotions" loading="lazy">
-        <img src="/anas-dartman/assets/img/edhub/edhub-device-list-1600.webp" alt="EDhub device list" loading="lazy">
-      </div><i class="u-dev-cam" aria-hidden="true"></i>
-    </div><p class="u-dev-cap">EDhub on a tablet or desktop</p></div>
+<section class="u-sec alt u-pv u-pv-sw u5-tight" id="edhub" aria-labelledby="hub-t">
+  <div class="u-w"><p class="u-eb" style="margin-bottom:6px">EDhub · for the owner</p><h2 class="u-h48" id="sw-hub">Manage smarter. Work less.</h2></div>
+  <div class="u-pv-stage" data-upv>
+    <div class="u-pv-imgs"><div class="u-dev u-pv-dev"><div class="u-dev-scr"><img class="on" data-k="k0" src="/anas-dartman/assets/img/edhub/edhub-store-overview-1600.webp" alt="ED hub store overview" loading="lazy"><img data-k="k1" src="/anas-dartman/assets/img/edhub/edhub-machine-status-1600.webp" alt="ED hub machine status" loading="lazy"><img data-k="k2" src="/anas-dartman/assets/img/edhub/edhub-open-machine-dialog-857.webp" alt="ED hub: open a machine" loading="lazy"><img data-k="k3" src="/anas-dartman/assets/img/edhub/edhub-desktop-image-setting-1600.webp" alt="ED hub screen promotions" loading="lazy"><img data-k="k4" src="/anas-dartman/assets/img/edhub/edhub-device-list-1600.webp" alt="ED hub device list" loading="lazy"></div><i class="u-dev-cam" aria-hidden="true"></i></div></div>
+    <ul class="u-pv-list" role="list"><li class="open" data-k="k0"><button type="button"><i></i>Revenue</button><p><b>Revenue.</b> Live dashboard, trends, peak hours and automatic bookkeeping.</p></li><li data-k="k1"><button type="button"><i></i>Machines</button><p><b>Machines.</b> Remote open, lock, pricing and modes for every machine.</p></li><li data-k="k2"><button type="button"><i></i>Open a machine</button><p><b>Open a machine.</b> Choose time or credit mode and confirm in one tap.</p></li><li data-k="k3"><button type="button"><i></i>Ads &amp; events</button><p><b>Ads &amp; events.</b> Put promotions on screen; run leagues and themed nights.</p></li><li data-k="k4"><button type="button"><i></i>Devices &amp; staff</button><p><b>Devices &amp; staff.</b> Every device in one list, and the right access for every staff member.</p></li></ul>
   </div>
 </section>
 
@@ -126,7 +99,7 @@
 <li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.5"/></svg><b>Know Dart.</b><p>Your first game in five steps.</p><a class="u-more" href="/anas-dartman/recommended/guide/">Read the guide</a></li>
 <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-8-7-8-14a8 8 0 0 1 16 0c0 7-8 14-8 14z"/><circle cx="16" cy="14" r="3"/></svg><b>Where to play.</b><p>Bars and lounges with EDmini near you.</p><a class="u-more" href="/anas-dartman/recommended/shop/">Find a venue</a></li>
 </ul></div></section>
-<section class="u-notes" aria-label="Footnotes"><div class="u-w"><p>App store listings, download links and QR code to be added when live.</p></div></section>
+<section class="u-notes" aria-label="Footnotes"><div class="u-w"><p>The DARTMAN App is free on the App Store and Google Play.</p></div></section>
 
 </main>
 <footer class="afoot">
@@ -134,7 +107,7 @@
     <div class="afoot-top">
       <div class="afoot-brand"><a class="blogo" href="/anas-dartman/recommended/" aria-label="DARTMAN home"><i class="logo-mark" aria-hidden="true"></i><i class="logo-word" aria-hidden="true"></i></a><p>Party on darts. Dart is the reason, people are the core.</p><a class="afoot-cta blue" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy EDmini Max</a></div>
       <div class="afoot-cols">
-        <div><h3>Business</h3><a href="/anas-dartman/recommended/business/">Business</a><a href="/anas-dartman/recommended/gallery/">Gallery</a><a href="/anas-dartman/recommended/space/specs/">Packaging &amp; specs</a></div>
+        <div><h3>Business</h3><a href="/anas-dartman/recommended/business/">Business</a><a href="/anas-dartman/recommended/gallery/">Gallery</a><a href="/anas-dartman/recommended/space/#compare">EDmini models</a></div>
         <div><h3>DM system</h3><a href="/anas-dartman/recommended/dm-system/">DM system</a><a href="/anas-dartman/recommended/games/">Games</a><a href="/anas-dartman/recommended/guide/">Know Dart</a><a href="/anas-dartman/recommended/shop/">Where to play</a></div>
         <div><h3>About</h3><a href="/anas-dartman/recommended/about/">About us</a><a href="/anas-dartman/recommended/faq/">FAQ</a><a href="/anas-dartman/recommended/contact/">Contact</a></div>
       </div>
@@ -145,7 +118,7 @@
   </div>
 </footer>
 <a class="rver" href="/anas-dartman/versions/"><b>Version B</b> · Your brief <span>Compare versions</span></a>
-<div class="u-fcta" data-ufcta aria-label="Quick actions"><a class="u-fcta-b" href="https://shop.dartmangames.com" target="_blank" rel="noopener">Buy EDmini Max</a><a class="u-fcta-q" href="/anas-dartman/recommended/business/#inquiry">Talk to us</a></div>
+<div class="u-fcta u5-fcta" data-ufcta aria-label="Quick actions"><a class="u-fcta-b" href="https://shop.dartmangames.com" target="_blank" rel="noopener" aria-label="Buy EDmini Max"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span>Buy EDmini Max</span></a><a class="u-fcta-q" href="/anas-dartman/recommended/business/#inquiry" aria-label="Talk to us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg><span>Talk to us</span></a></div>
 
 <script src="/anas-dartman/vendor/gsap.min.js" defer></script>
 <script src="/anas-dartman/vendor/ScrollTrigger.min.js" defer></script>
@@ -154,5 +127,6 @@
 <script src="/anas-dartman/js/site.js" defer></script>
 <script src="/anas-dartman/js/rec.js" defer></script>
 <script src="/anas-dartman/js/u4.js" defer></script>
+<script src="/anas-dartman/js/u5.js" defer></script>
 </body>
 </html>

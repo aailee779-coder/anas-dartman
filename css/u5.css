@@ -1,0 +1,237 @@
+/* u5 · client update 2026-10-25 (UPDATE.xlsx). Version B only, loaded after u4.css. */
+
+/* 1 · global nav: bigger, with Space / Event sub-menus */
+.rec .anav .bmain-in{height:56px;max-width:1180px}
+.rec .anav .blogo .logo-mark{width:26px;height:26px}.rec .anav .blogo .logo-word{width:108px;height:14px}
+.rec .anav .bmenu>li>a{font-size:15px;padding:0 18px}
+.rec .anav .bicons svg{width:20px;height:20px}
+.bsub-li{position:relative}
+.bsub{position:absolute;left:50%;top:100%;min-width:168px;padding:10px;border-radius:16px;background:rgba(22,22,23,.96);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);opacity:0;visibility:hidden;transform:translate(-50%,-6px);transition:opacity .2s,transform .25s,visibility .2s;z-index:5}
+.bsub a{display:block;padding:10px 14px;border-radius:10px;font-size:14px;font-weight:600;color:#f5f5f7;white-space:nowrap}
+.bsub a:hover{background:rgba(255,255,255,.1)}
+.bsub-li:hover .bsub,.bsub-li:focus-within .bsub{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media (max-width:1068px){
+  .bsub{display:none}
+  .bhd.mopen .bsub{display:block;position:static;opacity:1;visibility:visible;transform:none;background:none;box-shadow:none;padding:0 0 12px 12px;min-width:0}
+  .bhd.mopen .bsub a{font-size:17px;padding:8px 0;color:inherit;opacity:.7}
+  .bhd.mopen .bsub-li{flex-direction:column;align-items:stretch}
+}
+
+/* 2 · one type standard: tighter lines and gaps everywhere */
+.u4 .u-h80{line-height:1.02}
+.u4 .u-h64{line-height:1.03}
+.u4 .u-h48{line-height:1.06}
+.u4 .u-hero-h{line-height:1.03}
+.u4 .u-eb{margin-bottom:8px}
+.u4 :is(.u-p21,.u-p17){line-height:1.3}
+.u4 :is(.u-h80,.u-h64,.u-h48)+:is(.u-p21,.u-p17,.u-q-sub){margin-top:16px}
+.u4 .u-mw{margin-top:16px}
+.u4 .u-q-sub{line-height:1.3;margin-top:14px}
+
+/* 3 · hero: copy, buy, then the real product, all inside one screen */
+.u5-hero{min-height:calc(100vh - 56px);display:flex;flex-direction:column;align-items:center;padding:clamp(28px,5vh,56px) 0 0;overflow:hidden}
+.u5-hero .u-hero-h{margin-top:10px}
+.u5-hero .u-hero-sub{margin-top:10px}
+.u5-hero .u-hero-buy{margin-top:22px;display:flex;align-items:center;gap:18px}
+.u5-hero .u-hero-buy p{margin:0}
+.u5-hero-im{flex:1;min-height:300px;width:100%;margin:clamp(20px,4vh,40px) 0 0;display:flex;justify-content:center;align-items:flex-start;position:relative}
+.u5-hero-im img{height:100%;max-height:calc(100vh - 340px);min-height:300px;width:auto;animation:u-rise 1.4s cubic-bezier(.2,.7,.2,1) both;filter:drop-shadow(0 30px 60px rgba(255,255,255,.06))}
+.u5-hero-im::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18%;background:linear-gradient(transparent,#000);pointer-events:none}
+@media (max-width:734px){
+  .u5-hero{min-height:calc(100svh - 56px)}
+  .u5-hero .u-hero-buy{flex-direction:column;gap:10px}
+  .u5-hero-im img{max-height:calc(100svh - 300px);min-height:260px}
+}
+
+/* 3 · product lines: real images, filled CTA */
+.u5-lines li a{height:min(600px,calc(100vh - 220px));padding:36px 24px 28px}
+.u5-lines b{font-size:28px;line-height:1.1;margin-top:2px}
+.u5-lines span:not(.u5-ln-im){margin-top:6px;font-size:15px;line-height:1.35;color:#a1a1a6;max-width:280px}
+.u5-ln-im{flex:1;min-height:0;width:100%;display:flex;align-items:center;justify-content:center;padding:24px 0 18px}
+.u5-ln-im img{max-height:100%;max-width:86%;width:auto;height:auto;object-fit:contain}
+.u5-btn{display:inline-block;padding:10px 22px;border-radius:999px;background:#0071e3;color:#fff;font-style:normal;font-size:15px;font-weight:600}
+.u5-lines a:hover .u5-btn{background:#0077ed}
+@media (max-width:734px){.u5-lines li a{height:520px}}
+
+/* 7 · floating CTA: two round icons, label on hover */
+.u5-fcta a{writing-mode:horizontal-tb;transform:none;width:52px;height:52px;padding:0;border-radius:50%;display:grid;place-items:center;position:relative}
+.u5-fcta svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.u5-fcta span{position:absolute;right:62px;top:50%;transform:translate(6px,-50%);white-space:nowrap;padding:7px 12px;border-radius:999px;background:rgba(29,29,31,.92);color:#fff;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.u5-fcta a:hover span,.u5-fcta a:focus-visible span{opacity:1;transform:translate(0,-50%)}
+@media (max-width:734px){
+  .u5-fcta{top:auto;bottom:18px;right:14px;left:auto;flex-direction:column;transform:translate(140%,0)}
+  .u5-fcta.on{transform:none}
+  .u5-fcta a{width:48px;height:48px;padding:0}
+  .u5-fcta span{display:none}
+}
+
+/* 6 · ecosystem: machine linked to the player and the venue */
+.u5-net{position:relative;height:min(560px,calc(100vh - 300px));min-height:400px;margin-top:40px;color:#d9d9de}
+.u5-net-bg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.u5-net-bg circle{stroke-width:1;opacity:.9}
+.u5-link{fill:none;stroke:#0071e3;stroke-width:2;stroke-dasharray:6 8;animation:u5-flow 1.6s linear infinite}
+.u5-link.r{animation-direction:reverse}
+@keyframes u5-flow{to{stroke-dashoffset:-28}}
+.u5-n{position:absolute;margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;color:#1d1d1f}
+.u5-n figcaption{text-align:center;font-size:17px;font-weight:600;line-height:1.2}
+.u5-n figcaption em{display:block;font-style:normal;font-size:13px;color:#0a9d4a;margin-bottom:2px}
+.u5-n-mc{left:50%;top:0;bottom:0;transform:translateX(-50%)}
+.u5-n-mc img{height:calc(100% - 52px);width:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.25))}
+.u5-n-ph{left:8%;top:50%;transform:translateY(-50%)}
+.u5-ph{display:block;width:150px;aspect-ratio:9/19.5;border-radius:28px;border:6px solid #1d1d1f;background:#000;overflow:hidden;box-shadow:0 24px 40px -18px rgba(0,0,0,.4)}
+.u5-ph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.u5-n-tb{right:4%;top:50%;transform:translateY(-50%)}
+.u5-tb{display:block;width:300px;aspect-ratio:4/3;border-radius:20px;border:8px solid #1d1d1f;background:#fff;overflow:hidden;box-shadow:0 24px 40px -18px rgba(0,0,0,.4)}
+.u5-tb img{width:100%;height:100%;object-fit:cover;object-position:left top}
+.u5-net-txt{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;text-align:center}
+.u5-net-txt b{display:block;font-size:19px;color:#1d1d1f}
+.u5-net-txt span{display:block;margin-top:4px;font-size:15px;line-height:1.35;color:#6e6e73}
+.u-dark .u5-net-txt b,.alt .u5-net-txt b{color:#f5f5f7}
+@media (max-width:900px){
+  .u5-net{height:420px;min-height:0}
+  .u5-ph{width:96px;border-width:4px;border-radius:18px}
+  .u5-tb{width:170px;border-width:5px;border-radius:12px}
+  .u5-n-ph{left:0}.u5-n-tb{right:0}
+  .u5-n figcaption{font-size:14px}
+  .u5-net-txt{grid-template-columns:1fr;gap:16px}
+}
+
+/* 17 · cards: rounded rectangles with space between */
+.u4 .u-fit .u-cards-track{gap:20px}
+.u4 .u-fit .u-card-im{border-radius:24px;overflow:hidden}
+
+/* 20 · packaging & dimensions */
+.u5-pack-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;margin-top:40px}
+.u5-pack-card{margin:0;padding:28px;border-radius:28px;background:#fff;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center}
+.u5-pack-card img{max-width:100%;height:auto;max-height:calc(100vh - 420px);min-height:180px;object-fit:contain}
+.u5-pack-card figcaption{text-align:center;display:flex;flex-direction:column;gap:2px;font-size:15px;color:#6e6e73}
+.u5-pack-card figcaption b{font-size:19px;color:#1d1d1f}
+.u5-pack-dl{width:100%;display:grid;gap:10px}
+.u5-pack-dl div{display:grid;grid-template-columns:90px 1fr;column-gap:12px;font-size:15px;line-height:1.35;border-top:1px solid #e8e8ed;padding-top:10px}
+.u5-pack-dl dt{grid-row:span 2;font-weight:600;color:#1d1d1f}
+.u5-pack-dl dd{margin:0;color:#6e6e73}
+.u5-cont{display:flex;gap:28px;justify-content:center;align-items:baseline;margin-top:24px;font-size:17px;color:#1d1d1f;flex-wrap:wrap}
+.u5-cont em{font-style:normal;color:#6e6e73;margin-right:6px}
+@media (max-width:734px){.u5-pack-grid{grid-template-columns:1fr}}
+
+/* one section per screen: big blocks capped to the viewport */
+@media (min-width:735px){
+  .u4 .u-sec{padding:min(96px,10vh) 0}
+  .u4 .u-space,.u4 .u-space2{padding:min(110px,12vh) 0}
+}
+
+/* 11-15 · closer look: real product crops sit to the right of the pills; the finishes pill shows the real photo */
+@media (min-width:735px){
+  .u4 .u-pv-imgs img.r{padding:7% 5% 7% 36%;object-position:center}
+  .u4 .u-pv-imgs img.ph{object-fit:cover;object-position:50% 55%;padding:0 0 0 30%;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 44%);mask-image:linear-gradient(90deg,transparent 30%,#000 44%)}
+}
+@media (max-width:734px){.u4 .u-pv-imgs img.r{object-fit:contain;padding:18px}}
+
+/* 21 · fit-to-screen intro: headline + one big screen image */
+.u5-fit .u-go-im{margin-top:clamp(24px,4vh,48px)}
+.u5-fit .u-go-im img{max-height:calc(100vh - 380px);width:auto;max-width:min(962px,100%)}
+/* 22 · sliding feature cards */
+.u5-rail .u-cards-track li.u5-fcard{flex:0 0 300px;min-height:260px;padding:32px 28px;border-radius:24px;background:#1d1d1f;color:#f5f5f7;display:flex;flex-direction:column;gap:10px}
+.u5-fcard svg{width:40px;height:40px;fill:none;stroke:#30d158;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:18px}
+.u5-fcard b{font-size:24px;line-height:1.15}
+.u5-fcard p{font-size:17px;line-height:1.35;color:#a1a1a6}
+#features .u-h48{margin-bottom:28px}
+/* 23 · tighter pill viewers on ED OS / ED hub */
+.u5-tight .u-h48{margin-bottom:8px}
+@media (min-width:735px){.u4 .u5-tight .u-pv-stage{height:min(600px,calc(100vh - 240px));min-height:440px;margin-top:8px}}
+
+/* 24-26 · Gear / Studio / SKU heroes: same size; square product */
+.u5-hero-sq .u5-hero-im img{max-height:min(calc(100vh - 360px),560px);height:auto;width:auto;max-width:86vw}
+.u5-hero-sq .u5-hero-im::after{display:none}
+.u5-face{align-items:center}
+.u5-face .logo-mark{width:min(calc(100vh - 380px),420px);height:min(calc(100vh - 380px),420px);color:#f5f5f7}
+/* 25 · product list: every card the same size */
+.u5-pl{grid-template-columns:repeat(3,1fr)!important}
+.u5-pl li{grid-column:auto!important;grid-row:auto!important}
+.u5-pl .u-pl-im{min-height:240px}
+@media (max-width:734px){.u5-pl{grid-template-columns:1fr!important}}
+
+/* 32-33 · business: bar scene under case data, real photo in the venue chapter */
+.u5-scene{margin-top:36px}
+.u5-scene img{width:100%;max-height:calc(100vh - 360px);object-fit:cover;border-radius:28px}
+.u-intro2 .u5-ow{width:100%;height:100%;max-height:calc(100vh - 160px);object-fit:cover;border-radius:28px;filter:none!important}
+.u-intro2 .u5-btn{font-size:17px}
+
+/* 36 · inquiry form: shorter gaps */
+.u4 .u-q-row{margin-top:32px;padding:36px 0;gap:48px}
+.u4 .u-q-sub{margin-top:12px}
+.u4 .u-q-card{padding:32px}
+.u4 .u-q-copy h3{font-size:34px}
+
+/* 37-38 · App page, Apple Books style: centred intro, full phone screens (never cropped) */
+.u5-app{padding-top:min(80px,8vh)!important;overflow:hidden}
+.u5-appicon{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:20px;background:#000;color:#fff}
+.u5-appicon .logo-mark{width:54px;height:54px}
+.u5-appname{margin-top:10px;font-size:17px;font-weight:600;color:#1d1d1f}
+.u5-app .u-h80{margin-top:14px;color:#1d1d1f}
+.u5-applead{max-width:680px;margin:18px auto 0;font-size:19px;line-height:1.35;color:#6e6e73}
+.u5-applead b{color:#1d1d1f;font-weight:600}
+.u5-appbtns{display:flex;gap:12px;justify-content:center;margin-top:24px}
+.u5-phones{display:flex;justify-content:center;align-items:flex-end;gap:clamp(12px,2vw,28px);margin-top:min(48px,5vh);padding:0 16px}
+.u5-phone{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.u5-phone span{display:block;width:clamp(120px,14vw,210px);aspect-ratio:440/956;border-radius:clamp(20px,2.4vw,34px);border:clamp(4px,.5vw,7px) solid #1d1d1f;background:#000;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.u5-phone img{width:100%;height:100%;object-fit:contain;display:block}
+.u5-phones .u5-phone:nth-child(2n) span{transform:translateY(-18px)}
+.u5-phone figcaption{max-width:220px;text-align:center;font-size:15px;line-height:1.35;color:#6e6e73}
+.u5-phone figcaption b{color:#1d1d1f}
+.u5-seg{display:inline-flex;gap:4px;margin-top:22px;padding:4px;border-radius:999px;background:#e8e8ed}
+.u5-seg button{padding:8px 20px;border-radius:999px;font-size:15px;font-weight:600;color:#1d1d1f}
+.u5-seg button[aria-selected="true"]{background:#1d1d1f;color:#fff}
+.u5-tab-p{display:none;justify-content:center;gap:clamp(20px,4vw,64px);margin-top:36px}
+.u5-tab-p.on{display:flex;animation:u-rise .6s cubic-bezier(.2,.7,.2,1) both}
+.u5-tab-p .u5-phone span{width:clamp(150px,16vw,230px)}
+@media (max-width:734px){
+  .u5-phones{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:0 16px 8px}
+  .u5-phones .u5-phone span{width:150px}
+  .u5-tab-p.on{overflow-x:auto;justify-content:flex-start;scrollbar-width:none;padding-bottom:8px}
+  .u5-tab-p .u5-phone span{width:170px}
+}
+
+/* 40 · DM system banner: connected picture on black */
+.u5-dmhero{padding-bottom:min(60px,6vh)}
+.u5-net.dk{color:#2c2c2e;height:min(520px,calc(100vh - 360px));min-height:360px;margin-top:min(36px,4vh)}
+.u5-net.dk .u5-n{color:#f5f5f7}
+.u5-net.dk .u5-n figcaption em{color:#30d158}
+.u5-net.dk .u5-ph,.u5-net.dk .u5-tb{border-color:#3a3a3c}
+
+/* 44-47 · game cards: the name sits right under the picture, no overlap */
+.u4 .u-card-im.g{height:auto!important;aspect-ratio:auto!important;background:none!important;display:block;border-radius:16px}
+.u4 .u-card-im.g img{width:100%;height:auto;border-radius:16px;display:block}
+.u4 .u-card-im.g+p{margin-top:12px}
+.u4 .u-fit .u-cards-track{gap:20px}
+.u4 .u-fit .u-cards-track>li{min-width:0}
+
+/* 49 · About: abstract concept chapter (Apple Music-style light arcs on black) */
+.u5-concept{position:relative;background:#000;color:#f5f5f7;min-height:min(760px,calc(100vh - 56px));display:grid;place-items:center;overflow:hidden;padding:min(96px,10vh) 0}
+.u5-arcs{position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+.u5-arcs path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:u5-draw 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+.u5-arcs path:nth-child(2){animation-delay:.2s}.u5-arcs path:nth-child(3){animation-delay:.35s}.u5-arcs path:nth-child(4){animation-delay:.5s}.u5-arcs path:nth-child(5){animation-delay:.65s}
+@keyframes u5-draw{to{stroke-dashoffset:0}}
+.u5-concept-t{position:relative;max-width:760px}
+.u5-concept .u-h80{color:#f5f5f7}
+.u5-concept-cta{margin-top:28px}
+@media (prefers-reduced-motion:reduce){.u5-arcs path{animation:none;stroke-dashoffset:0}}
+
+/* QA fixes */
+.u4 .u-intro2 img.u5-ow{grid-column:2;grid-row:1;height:calc(100vh - 200px);max-height:720px;width:calc(100% - 48px);margin-right:48px;border-radius:28px;object-fit:cover;object-position:50% 50%;filter:none!important}
+@media (max-width:734px){.u4 .u-intro2 img.u5-ow{grid-column:1;grid-row:2;height:auto;aspect-ratio:4/3;width:100%;margin:0}}
+.u4 .u5-fit .u-go-im img{height:calc(100vh - 420px);min-height:260px;max-height:560px;width:auto;max-width:100%}
+@media (min-width:735px){
+  .u4 .u-up2-grid{margin-top:32px;gap:56px}
+  .u4 .u-up2-fig{aspect-ratio:auto;height:calc(100vh - 330px);max-height:600px}
+  .u4 .u-up2-list li{padding:16px 0}
+  .u5-phones .u5-phone span{width:max(110px,min(13vw,calc((100vh - 600px) / 2.2)))}
+}
+@media (max-width:1068px){.bhd.mopen .bsub a{opacity:1;color:#a1a1a6!important;font-size:18px;padding:9px 0}}
+@media (max-width:734px){
+  .u5-hero-im img{max-height:calc(100svh - 350px)}
+  .u5-net{height:360px}
+  .u5-ph{width:78px}.u5-tb{width:128px;border-width:4px;border-radius:10px}
+  .u5-n-ph{left:-2px}.u5-n-tb{right:-2px}
+  .u5-n-mc img{height:calc(100% - 48px)}
+}

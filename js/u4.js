@@ -90,7 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* floating CTA: shows after the first screen, hides near the footer */
   const fc = $('[data-ufcta]');
   if (fc) { const ft = $('footer'); const fu = () => { const nearEnd = ft && ft.getBoundingClientRect().top < innerHeight; fc.classList.toggle('on', scrollY > innerHeight * .8 && !nearEnd); };
-    addEventListener('scroll', fu, { passive: true }); fu(); }
+    addEventListener('scroll', fu, { passive: true }); fu();
+    /* phones: get out of the way while reading (scroll down), come back on scroll up */
+    let y0 = scrollY; addEventListener('scroll', () => { const y = scrollY; if (innerWidth < 735 && Math.abs(y - y0) > 6) { fc.classList.toggle('hid', y > y0); y0 = y; } }, { passive: true }); }
 
   /* venue finder: filter by type */
   $$('[data-ufinder]').forEach(f => {

@@ -252,3 +252,15 @@
   .u5-concept-t{padding:0 8px}
   .u-intro2-t{padding-top:56px!important}
 }
+/* audit 2026-10-28b */
+.rver{position:static!important;display:inline-flex!important;margin:20px 0 0;box-shadow:none!important;background:rgba(0,0,0,.06)!important;color:#1d1d1f!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+.rver b,.rver{color:#1d1d1f!important}.rver span{color:#0071e3!important}
+.u-bignums b{white-space:nowrap}
+@media (max-width:734px){
+  .rver{display:inline-flex!important}
+  .u5-fcta.hid{transform:translate(140%,0)!important}
+  .u-earn{padding-top:56px!important}
+  .u5-concept{padding-bottom:24px!important;min-height:auto!important}
+  .u5-concept+.u-sec{padding-top:56px!important}
+  .u-bignums b{font-size:clamp(28px,9vw,40px)!important}
+}

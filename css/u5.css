@@ -264,3 +264,96 @@
   .u5-concept+.u-sec{padding-top:56px!important}
   .u-bignums b{font-size:clamp(28px,9vw,40px)!important}
 }
+
+/* ===== client problem list 10.29 (00_client-files/2026-10-29_problem-list/CHECKLIST.md) ===== */
+/* #2 home product lines: big SPACE / GEAR / STUDIO title + short intro on white cards */
+.u5-lines-lt li a{background:#fff!important;color:#1d1d1f!important}
+.u5-lines-lt .u5-ln-t{font-size:clamp(34px,3.4vw,48px)!important;font-weight:700!important;letter-spacing:.08em;line-height:1!important;margin-top:4px}
+.u5-lines-lt span:not(.u5-ln-im){color:#6e6e73!important;font-size:16px!important;max-width:300px}
+.u5-lines-lt .u5-ln-im img{max-width:82%;max-height:100%;mix-blend-mode:multiply}
+/* #6 + #10 closer look: one rounded panel, product fills it; same panel for every pill */
+@media (min-width:735px){
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs{position:absolute;top:0;bottom:auto;aspect-ratio:3/2;max-height:100%;left:max(34%,calc((100% - min(87.5%,1260px))/2 + 410px));right:calc((100% - min(87.5%,1260px))/2);border-radius:28px;overflow:hidden;background:radial-gradient(120% 90% at 55% 40%,#2c2c2f 0%,#0d0d0e 70%)}
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img,.u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img.r{padding:5%!important;object-fit:contain!important;object-position:center!important}
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img.ph{padding:0!important;object-fit:cover!important;-webkit-mask-image:none!important;mask-image:none!important}
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img[data-k="style"]{padding:9%!important}
+}
+@media (max-width:734px){.u4 .u-pv:not(.u-pv-sw) .u-pv-imgs{border-radius:24px;overflow:hidden;width:87.5%;margin:0 auto;background:radial-gradient(120% 90% at 55% 40%,#2c2c2f 0%,#0d0d0e 70%)}}
+/* #7 Fits where nothing else does: less space */
+.u4 .u-space{padding:min(96px,10vh) 0 min(40px,4vh)!important}
+.u4 .u-space2{padding:min(88px,9vh) 0!important}
+/* #10 install clips: rounded rectangles with a clear gap */
+.u4 .u-fit .u-cards-track{gap:24px!important}
+.u4 .u-fit .u-cards-track>li{min-width:0;overflow:visible}
+.u4 .u-fit .u-card-im{width:100%!important;max-width:100%;border-radius:20px!important;overflow:hidden}
+.u4 .u-fit .u-card-im img{width:100%!important;height:100%!important;object-fit:cover}
+.u4 .u-fit .u-card-im video{width:100%!important;height:122%!important;object-fit:cover;object-position:center top} /* keeps the burned-in captions out of view */
+@media (max-width:734px){.u4 .u-fit .u-cards-track{gap:16px 12px!important}}
+/* #11 hardware + software (and ED hub) pill viewers: same rhythm — list starts under the heading, same bottom space */
+@media (min-width:735px){
+  .u4 .u-pv .u-pv-list{top:0!important;transform:none!important}
+  .u4 .u-pv{padding-bottom:min(96px,10vh)!important}
+  .u4 .u-pv-sw .u-pv-stage{height:auto!important;min-height:440px!important;max-height:none!important}
+  .u4 .u-pv-sw .u-pv-imgs{position:relative!important;inset:auto!important;display:flex!important;justify-content:flex-end;align-items:flex-start;padding-left:max(34%,calc((100% - min(87.5%,1260px))/2 + 410px))!important;padding-right:calc((100% - min(87.5%,1260px))/2)!important}
+  .u4 .u-pv-sw .u-pv-dev{width:100%;max-width:860px}
+}
+/* #12 always in control: real photo, not a device mock */
+.u4 .u5-go-ph img{box-shadow:none!important;border-radius:28px;width:min(900px,100%)!important;height:auto!important;max-height:none!important;min-height:0!important;aspect-ratio:5/4;object-fit:cover}
+@media (min-width:735px){.u4 .u5-go-ph img{aspect-ratio:16/10}}
+/* #14 stacked light sections (Models / Compare / Packaging / Products / FAQ): one even gap */
+.u4 :is(.u-cmp,.u-vs,.u5-pack,.u5-sp-prod,.u-faqs){padding-top:min(72px,8vh)!important;padding-bottom:min(72px,8vh)!important}
+.u4 .u-cmp .u-row,.u4 .u5-sp-prod .u-row{margin-bottom:0}
+/* #15 local nav: one underline that slides to the current section */
+.u-ln-r{position:relative}
+.u-ln-r a.on::after{display:none!important}
+.u-ln-bar{position:absolute;bottom:-14px;left:0;width:0;height:1px;background:#f5f5f7;transition:transform .35s cubic-bezier(.3,.7,.2,1),width .35s cubic-bezier(.3,.7,.2,1),opacity .2s;pointer-events:none}
+.u-ln.lt .u-ln-bar{background:#1d1d1f}
+@media (max-width:734px){.u-ln-bar{display:none}}
+/* #16 ED OS hero, #18 Gear hero (colour photo), #25 Business hero: phone crop */
+.u4 .u5-col .u-chap-hero img{filter:none!important}
+@media (max-width:734px){.u5-edos-hero img{object-position:72% 50%}.u-bizhero .u-chap-hero img{object-position:22% 50%}.u5-col .u-chap-hero img{object-position:58% 50%}}
+/* #17 ED hub: screens keep their real ratio (no crop) */
+.u4 .u5-hub .u-dev-scr{aspect-ratio:1600/770;background:#fff}
+.u4 .u5-hub .u-dev-scr img{object-fit:contain!important;background:#fff}
+/* #19 + #20 product cards (Gear / Studio / Space): one frame, natural height */
+.u5-prod{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px;list-style:none;padding:0}
+.u5-prod5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.u5-prod li{min-width:0}
+.u5-prod a{display:flex;flex-direction:column;height:100%;padding:18px 18px 20px;border-radius:24px;background:#fff;color:#1d1d1f;transition:transform .35s,box-shadow .35s}
+.u5-prod a:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(0,0,0,.25)}
+.u5-prod .im{display:block;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:#fff}
+.u5-prod .im img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.u5-prod b{display:block;margin-top:16px;font-size:19px;font-weight:600;line-height:1.2}
+.u5-prod .d{display:block;flex:1;margin-top:6px;font-size:14px;line-height:1.4;color:#6e6e73}
+.u5-prod .row{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-top:16px}
+.u5-prod .row em{font-style:normal;font-size:13px;color:#6e6e73}
+.u5-prod .row .u-btn{font-style:normal;pointer-events:none;flex:none}
+@media (max-width:1068px){.u5-prod,.u5-prod5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:734px){.u5-prod,.u5-prod5{grid-template-columns:1fr 1fr;gap:12px}.u5-prod a{padding:12px 12px 14px;border-radius:18px}.u5-prod b{font-size:16px;margin-top:10px}.u5-prod .d{font-size:13px}.u5-prod .row{flex-direction:column;align-items:flex-start;gap:8px}}
+/* #21 Studio banner: the crew */
+.u5-crew{padding-bottom:0!important;overflow:hidden}
+.u5-crew-row{display:flex;width:max-content;margin-top:clamp(28px,5vh,56px);animation:u5-crew 70s linear infinite}
+.u5-crew-row:hover{animation-play-state:paused}
+.u5-crew-row ul{display:flex;gap:16px;padding:0 8px 0 8px;margin:0;list-style:none}
+.u5-crew-row li{flex:none;width:clamp(180px,17vw,250px);aspect-ratio:600/768;border-radius:24px;overflow:hidden;background:#111}
+.u5-crew-row img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes u5-crew{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.u5-crew-row{animation:none}}
+/* #24 About: arcs blend into the black, fade behind the text and at the ends */
+.u4 .u5-arcs{opacity:.7!important;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 62% 70% at 50% 50%,transparent 32%,#000 62%,transparent 96%);mask-image:radial-gradient(ellipse 62% 70% at 50% 50%,transparent 32%,#000 62%,transparent 96%)}
+.u4 .u5-arcs g{filter:url(#u5-glow) blur(1.2px)}
+@media (max-width:734px){.u4 .u5-arcs{opacity:.45!important}}
+/* #1 idea photo: show the whole 4:3 frame so the machine is never cut */
+.u4 .u-intro2 img.u5-ow.u5-idea{height:auto!important;max-height:none!important;aspect-ratio:4/3;object-position:50% 50%}
+/* #18 Gear hero: headline on black, client photo below in a rounded frame */
+.u5-gear-hero{padding-bottom:0!important}
+.u5-gear-ph{width:87.5%;max-width:1260px;margin:clamp(24px,4vh,44px) auto 0}
+.u5-gear-ph img{display:block;width:100%;height:auto;max-height:calc(100vh - 300px);aspect-ratio:2752/1440;object-fit:cover;border-radius:28px;filter:none!important}
+@media (max-width:734px){.u5-gear-ph img{aspect-ratio:4/3;max-height:none;object-position:55% 50%;border-radius:20px}}
+/* QA 10.29 phone pass */
+@media (max-width:734px){
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs{aspect-ratio:3/2!important;height:auto!important}
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img{object-fit:contain!important;padding:4%!important}
+  .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img.ph{object-fit:cover!important;padding:0!important}
+  .u4 .u-vhero .u-chap-hero::after{height:75%;background:linear-gradient(transparent,rgba(0,0,0,.78) 45%,rgba(0,0,0,.94))}
+}

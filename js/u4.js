@@ -8,6 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const lnUpd = () => { if (!ln) return; const y = ln.getBoundingClientRect().bottom - 2; ln.classList.toggle('lt', lights.some(s => { const r = s.getBoundingClientRect(); return r.top <= y && r.bottom > y; })); };
   addEventListener('scroll', lnUpd, { passive: true }); lnUpd();
 
+  /* local nav: one underline that slides to the clicked / current section (client 10.29 #15) */
+  $$('.u-ln-r').forEach(r => {
+    const links = $$('a[href^="#"]:not(.u-buy)', r).filter(l => l.getAttribute('href').length > 1); if (!links.length) return;
+    const secs = links.map(l => d.getElementById(l.getAttribute('href').slice(1)));
+    const bar = d.createElement('i'); bar.className = 'u-ln-bar'; bar.setAttribute('aria-hidden', 'true'); r.appendChild(bar);
+    let cur = null, lock = 0;
+    const set = l => { if (l === cur) return; cur = l; links.forEach(x => { x.classList.toggle('on', x === l); if (x === l) x.setAttribute('aria-current', 'true'); else x.removeAttribute('aria-current'); });
+      if (!l) { bar.style.opacity = 0; return; } bar.style.opacity = 1; bar.style.width = l.offsetWidth + 'px'; bar.style.transform = `translateX(${l.offsetLeft}px)`; };
+    const spy = () => { if (Date.now() < lock) return; const y = (ln ? ln.getBoundingClientRect().bottom : 0) + 90; let k = 0;
+      secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top <= y) k = i; });
+      if (innerHeight + scrollY >= d.documentElement.scrollHeight - 4) { for (let i = secs.length - 1; i >= 0; i--) if (secs[i]) { k = i; break; } }
+      set(links[k]); };
+    links.forEach(l => l.addEventListener('click', () => { lock = Date.now() + 900; cur = null; set(l); }));
+    addEventListener('scroll', () => requestAnimationFrame(spy), { passive: true }); addEventListener('resize', () => { const c = cur; cur = null; set(c); }); spy();
+  });
+
   /* global nav hides on scroll down and comes back on scroll up (so other pages are always one tap away) */
   const gh = $('.bhd');
   if (gh) { let ly = scrollY; const gUpd = () => { const y = scrollY, open = gh.classList.contains('mopen');

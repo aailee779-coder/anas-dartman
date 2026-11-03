@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('[data-bag-close]').addEventListener('click', close);
   bag.addEventListener('click', e => { if (e.target === bag) close(); });
   d.addEventListener('keydown', e => { if (e.key === 'Escape' && !bag.hidden) close(); });
-  $('[data-checkout]').addEventListener('click', () => { $('[data-checkout-note]').hidden = false; });
+  const co = $('[data-checkout]'); if (co) co.addEventListener('click', () => { const n = $('[data-checkout-note]'); if (n) n.hidden = false; });
 
   /* tap a photo to zoom */
   const zoom = $('[data-zoom]');

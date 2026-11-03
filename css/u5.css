@@ -357,3 +357,10 @@
   .u4 .u-pv:not(.u-pv-sw) .u-pv-imgs img.ph{object-fit:cover!important;padding:0!important}
   .u4 .u-vhero .u-chap-hero::after{height:75%;background:linear-gradient(transparent,rgba(0,0,0,.78) 45%,rgba(0,0,0,.94))}
 }
+/* buttons QA 11-03: Buy page on phones — the grid column was 556px on a 358px screen, cutting off colours and gallery arrows */
+@media (max-width:900px){
+  .rec .buy-grid{grid-template-columns:minmax(0,1fr)!important}
+  .rec .buy-grid>*{min-width:0}
+  .rec .buy-colors{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .rec .buy-thumbs{overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}
+}

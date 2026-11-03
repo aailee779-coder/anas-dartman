@@ -7,7 +7,8 @@
     const b = f && d.querySelector('[data-uevents] .u-seg button[data-f="' + f + '"]');
     if (b) { b.click(); d.getElementById('events') && d.getElementById('events').scrollIntoView(); }
   };
-  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', pick); else pick();
+  /* wait until u4.js has wired the filter buttons (it runs on DOMContentLoaded) */
+  if (d.readyState === 'complete') setTimeout(pick); else window.addEventListener('load', () => setTimeout(pick));
   window.addEventListener('hashchange', pick);
 })();
 

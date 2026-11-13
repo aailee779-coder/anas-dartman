@@ -570,3 +570,10 @@ body.gn-on .u6-turn .u-turn-pin{top:100px!important;height:calc(100vh - 100px)!i
 .u4 .u-chap2 .u-intro2:has(.u5-idea){min-height:0!important;max-height:none!important}
 .u4 .u-chap2:has(.u5-idea){padding-top:clamp(56px,8vh,96px)!important;padding-bottom:clamp(56px,8vh,96px)!important}
 .u4 .u-chap2 .u-intro2:has(.u5-idea) .u-intro2-t{padding-top:0!important}
+
+.u5-pack-quantity{width:100%;border-top:1px solid #e8e8ed;padding-top:18px}
+.u5-pack-quantity h3{margin:0 0 12px;font-size:18px;line-height:1.4;font-weight:600;color:#1d1d1f}
+.u5-pack-quantity dl{margin:0;display:grid;gap:6px;font-size:15px;line-height:1.4}
+.u5-pack-quantity dl div{display:grid;grid-template-columns:90px 1fr;gap:12px}
+.u5-pack-quantity dt{color:#1d1d1f;font-style:normal}
+.u5-pack-quantity dd{margin:0;color:#6e6e73}

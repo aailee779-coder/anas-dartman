@@ -60,11 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* product viewer */
   $$('[data-upv]').forEach(v => {
-    const items = $$('.u-pv-list li', v), imgs = $$('.u-pv-imgs img', v);
+    const items = $$('.u-pv-list li', v), imgs = $$('.u-pv-imgs [data-k]', v);
+    const play = () => imgs.forEach(m => { if (m.tagName !== 'VIDEO') return; if (m.classList.contains('on')) m.play().catch(() => {}); else m.pause(); });
     items.forEach(li => $('button', li).addEventListener('click', () => {
       items.forEach(x => x.classList.toggle('open', x === li));
       imgs.forEach(im => im.classList.toggle('on', im.dataset.k === li.dataset.k));
+      play();
     }));
+    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? play() : imgs.forEach(m => m.tagName === 'VIDEO' && m.pause()))).observe(v);
   });
 
   /* marquee rails: duplicate the cards once so the loop is seamless */

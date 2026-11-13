@@ -570,3 +570,22 @@ body.gn-on .u6-turn .u-turn-pin{top:100px!important;height:calc(100vh - 100px)!i
 .u4 .u-chap2 .u-intro2:has(.u5-idea){min-height:0!important;max-height:none!important}
 .u4 .u-chap2:has(.u5-idea){padding-top:clamp(56px,8vh,96px)!important;padding-bottom:clamp(56px,8vh,96px)!important}
 .u4 .u-chap2 .u-intro2:has(.u5-idea) .u-intro2-t{padding-top:0!important}
+
+/* Client packaging reference: cartons left, exact specifications right. */
+.u5-pack-grid{grid-template-columns:1fr}
+.u5-pack-grid>.u5-pack-card{max-width:800px;width:100%;box-sizing:border-box;justify-self:center}
+.u5-pack-reference{display:grid;grid-template-columns:1fr 1fr;gap:64px;background:#fff;margin-top:28px;padding:36px 48px;box-sizing:border-box;border-radius:28px;align-items:center}
+.u5-pack-visual{min-width:0}
+.u5-pack-reference .u5-pack-title{text-align:left;font-size:18px;margin-bottom:20px}
+.u5-pack-visual img{display:block;width:100%;max-width:430px;height:auto;margin:0 auto}
+.u5-pack-details{min-width:0}
+.u5-pack-reference .u5-pack-dl{gap:10px;margin:0}
+.u5-pack-reference .u5-pack-dl div{grid-template-columns:100px 1fr;gap:0 16px;border:0;padding:0;font-size:20px;line-height:1.45}
+.u5-pack-reference .u5-pack-dl dt{font-weight:400;color:#111}
+.u5-pack-reference .u5-pack-dl dd{color:#111}
+.u5-pack-container{margin-top:44px}
+.u5-pack-container h3{font-size:26px;line-height:1.3;margin:0 0 16px;color:#111;font-weight:600}
+.u5-pack-container dl{margin:0 0 0 24px;font-size:20px;line-height:1.5}
+.u5-pack-container dl div{display:grid;grid-template-columns:100px 1fr;gap:10px}
+.u5-pack-container dd{margin:0}
+@media(max-width:734px){.u5-pack-reference{grid-template-columns:1fr;gap:28px;padding:28px 20px}.u5-pack-reference .u5-pack-title{text-align:center}.u5-pack-visual img{max-width:340px}.u5-pack-reference .u5-pack-dl div{grid-template-columns:78px 1fr;column-gap:8px;font-size:15px}.u5-pack-container{margin-top:28px}.u5-pack-container h3{font-size:22px}.u5-pack-container dl{font-size:17px;margin-left:0}}

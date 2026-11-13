@@ -526,7 +526,7 @@ body.gn-on .u6-turn .u-turn-pin{top:100px!important;height:calc(100vh - 100px)!i
 /* Crop only the document margins already baked into the client images.
    The viewport adds no phone frame, card, background or shadow. */
 .u6-phones .u5-phone{justify-content:flex-start}
-.u6-shot{position:relative;flex:none;height:clamp(360px,40vw,500px);aspect-ratio:var(--shot-ratio);max-width:100%;overflow:hidden;border:0;border-radius:11% / 5.2%;background:transparent;box-shadow:none}
+.u6-shot{position:relative;flex:none;height:clamp(360px,40vw,500px);aspect-ratio:var(--shot-ratio);max-width:100%;overflow:hidden;border:0;border-radius:12% / 5.5%;background:transparent;box-shadow:none}
 .u6-shot>img{position:absolute;display:block;width:var(--shot-width);height:var(--shot-height);max-width:none;left:var(--shot-left);top:var(--shot-top);object-fit:fill;border:0;border-radius:0;background:transparent;box-shadow:none}
 @media(max-width:734px){.u6-shot{height:min(126vw,500px)}}
 /* About #39: / and X drawn with the same stroke as the O */

@@ -662,3 +662,9 @@ body.gn-on .u6-turn .u-turn-pin{top:100px!important;height:calc(100vh - 100px)!i
 .u5-pack .u5-pack-card img{width:auto;max-width:100%;height:auto;max-height:calc(100vh - 420px);min-height:180px}
 .u5-pack .u5-pack-grid>.dm-pack-original{padding:16px}
 @media(max-width:900px){.u5-pack .u5-pack-grid{grid-template-columns:1fr}.u5-pack .u5-pack-card img{min-height:0}}
+
+/* User-selected restored-style reference: original two cards, unnumbered rows. */
+.u5-pack .u5-pack-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:stretch}
+.u5-pack .u5-pack-grid>.u5-pack-card{padding:28px;max-width:none;width:auto}
+.u5-pack .u5-pack-card img{max-width:100%;height:auto;max-height:calc(100vh - 420px);min-height:180px;width:auto;object-fit:contain}
+@media(max-width:734px){.u5-pack .u5-pack-grid{grid-template-columns:1fr}}

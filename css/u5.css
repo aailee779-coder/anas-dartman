@@ -636,3 +636,15 @@ body.gn-on .u6-turn .u-turn-pin{top:100px!important;height:calc(100vh - 100px)!i
 @media(max-width:734px){.dm-art-grid{grid-template-columns:1fr 1fr;gap:12px}.dm-art,.dm-art:nth-child(-n+2){grid-column:span 1;height:240px;padding:15px}.dm-art:nth-child(-n+2){grid-column:span 2;height:235px}.dm-art:last-child{grid-column:span 2;height:215px}.dm-art h3{font-size:18px}.dm-art p{font-size:12px}.dm-store-visual{gap:3px}.dm-store-visual span{padding:12px 5px;font-size:7px}.dm-store-visual i{font-size:7px}.dm-billing-visual>span{font-size:9px;padding:6px}.dm-screen img{max-height:175px;width:auto;max-width:100%}}
 
 .dm-billing-visual b{display:flex;justify-content:center;align-items:center;width:100%;flex-basis:100%;height:44px}.dm-billing-visual svg{height:44px;width:44px}
+
+/* ED OS: large screen left, four compact feature compositions right. */
+#os .dm-art-grid{grid-template-columns:minmax(0,1.45fr) repeat(2,minmax(0,1fr));grid-template-rows:220px 220px}
+#os .dm-art{grid-column:auto;height:220px}
+#os .dm-art.dm-screen{grid-column:1;grid-row:1/3;height:456px;padding:28px;justify-content:center;align-items:center;background:radial-gradient(ellipse at 50% 60%,#062c16 0,#000 72%)}
+#os .dm-screen img{display:block;width:100%;max-width:none;max-height:none;height:auto;object-fit:contain;border-radius:12px}
+#os .dm-metric>strong{font-size:34px;margin:8px 0 0}#os .dm-metric>strong span{font-size:46px}
+#os .dm-step-line{gap:6px;font-size:9px;margin-top:12px}
+#os .dm-art h3{font-size:19px}#os .dm-art p{font-size:12px}
+#os .dm-art-symbol{width:65px;height:65px}
+@media(max-width:900px) and (min-width:735px){#os .dm-art-grid{grid-template-columns:minmax(0,1.2fr) repeat(2,minmax(0,1fr))}#os .dm-art{padding:15px}#os .dm-step-line{flex-wrap:wrap;justify-content:center}}
+@media(max-width:734px){#os .dm-art-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}#os .dm-art.dm-screen{grid-column:1/3;grid-row:auto;height:auto;min-height:230px;padding:24px 16px}#os .dm-art,#os .dm-art:nth-child(-n+2),#os .dm-art:last-child{grid-column:auto;grid-row:auto;height:230px}#os .dm-art.dm-screen{grid-column:1/3;height:auto}#os .dm-step-line{flex-wrap:wrap;justify-content:center}#os .dm-art h3{font-size:17px}}

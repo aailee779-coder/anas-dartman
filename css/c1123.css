@@ -159,3 +159,21 @@
  .feature-cameras .u-feature-label{width:30%;background:rgba(0,0,0,.7);padding:6px;border-radius:6px}.feature-cameras .u-feature-label span{font-size:13px}.feature-cameras .u-feature-label small{font-size:11px}
  .u-feature-caption{padding:18px 20px}.u-feature-caption b{font-size:18px}.u-feature-caption span{font-size:14px}
 }
+/* Final customer refinements: one-line headline, capped photo, matching feature panels. */
+.u6-home-cover .u6-hero-t h1{font-size:clamp(32px,4vw,60px);white-space:nowrap;letter-spacing:-.03em}
+@media(min-width:735px){
+ .u4 .u6-players .u-chap-hero img{height:min(960px,calc(100dvh - 56px),80vw)!important;max-height:min(960px,calc(100dvh - 56px),80vw)!important;object-fit:cover!important;object-position:50% 20%!important}
+}
+.rec.u4 .u-pv .feature-detail.on{display:grid;grid-template-columns:36% 64%;aspect-ratio:16/9;align-items:stretch}
+.rec.u4 .u-pv:not(.u-pv-sw) .feature-detail>img{grid-column:2;grid-row:1;height:100%!important;min-height:0;object-fit:cover!important;object-position:center!important;aspect-ratio:auto}
+.feature-detail .u-feature-label{position:static;grid-column:1;grid-row:1;align-self:center;width:auto;padding-left:14%;padding-right:4%}
+.feature-detail .u-feature-label span{font-size:clamp(20px,2vw,28px)}
+.rec #edhub .dm-art{height:auto;min-height:240px}
+.rec .dm-event-visual,.rec .dm-ad-visual{flex-shrink:0}
+.rec .dm-event-visual{height:auto;min-height:110px;display:flex;flex-direction:column;gap:5px;padding:12px 13px}
+.rec .dm-event-visual>span{line-height:1.2}.rec .dm-event-visual>b{margin:0;line-height:.95}.rec .dm-event-visual>i{display:block;font-size:10px;line-height:1.2;white-space:nowrap}
+@media(max-width:734px){
+ .u6-home-cover .u6-hero-t h1{font-size:44px}
+ .rec.u4 .u-pv .feature-detail.on{aspect-ratio:4/3;grid-template-columns:36% 64%}
+ .feature-detail .u-feature-label{padding-left:12%;padding-right:0}.feature-detail .u-feature-label span{font-size:16px}.feature-detail .u-feature-label b{font-size:13px}
+}

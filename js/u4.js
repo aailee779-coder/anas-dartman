@@ -62,10 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
   $$('[data-upv]').forEach(v => {
     const items = $$('.u-pv-list li', v), imgs = $$('.u-pv-imgs [data-k]', v);
     const play = () => imgs.forEach(m => { if (m.tagName !== 'VIDEO') return; if (m.classList.contains('on')) m.play().catch(() => {}); else m.pause(); });
+    const fitScreen = () => {
+      const media = imgs.find(m => m.classList.contains('on') && m.closest('.u-dev-scr'));
+      if (!media) return;
+      const width = media.tagName === 'VIDEO' ? media.videoWidth : media.naturalWidth;
+      const height = media.tagName === 'VIDEO' ? media.videoHeight : media.naturalHeight;
+      if (width && height) media.closest('.u-dev-scr').style.aspectRatio = `${width} / ${height}`;
+    };
+    imgs.forEach(m => {
+      if (m.tagName === 'IMG') m.addEventListener('load', fitScreen);
+      if (m.tagName === 'VIDEO') m.addEventListener('loadedmetadata', fitScreen);
+    });
+    fitScreen();
     items.forEach(li => $('button', li).addEventListener('click', () => {
       items.forEach(x => x.classList.toggle('open', x === li));
       imgs.forEach(im => im.classList.toggle('on', im.dataset.k === li.dataset.k));
       play();
+      fitScreen();
     }));
     new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? play() : imgs.forEach(m => m.tagName === 'VIDEO' && m.pause()))).observe(v);
   });
@@ -134,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $$('h2,.sq', b).forEach(h => { const words = h.textContent.trim().split(/\s+/);
       h.innerHTML = words.map(w => `<span class="w" style="transition-delay:${(n++ * .14 + .3).toFixed(2)}s">${w}</span>`).join(' '); });
     const io3 = new IntersectionObserver(es => es.forEach(e => b.classList.toggle('talk', e.isIntersecting)), { threshold: .55 });
-    io3.observe(b.closest('figure') || b);
+    io3.observe(b.closest('.u6-players') ? b : (b.closest('figure') || b));
   });
 
   /* dialogs */
